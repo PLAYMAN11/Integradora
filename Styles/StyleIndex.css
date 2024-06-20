@@ -34,6 +34,12 @@ body {
     font-size: 400%;
     vertical-align: middle;
     width: 100%;
+}
+.descripcion2 {
+    display: flex;
+    font-size: 100%;
+    vertical-align: middle;
+    margin: 5%;
 
 }
 
