@@ -1,4 +1,5 @@
 header {
+    background-color: #1e1e2a;
     left: 0; 
 	top: 0;
     display: flex;
@@ -6,7 +7,7 @@ header {
     border-top: 5px solid #b12bb1;
     position: fixed;
     width: 100%; 
-    box-shadow:  0 0 100rem 0  rgb(0, 0, 0);
+    box-shadow:  0 0 1rem 0  rgb(0, 0, 0);
     align-content: center;
 }
  .titulo{
@@ -26,7 +27,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin:  7% 0 0  5%;
+    margin:  2% 0 0  5%;
 }
 .descripcion {
     display: inline-block;
