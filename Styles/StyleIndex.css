@@ -61,6 +61,8 @@ body {
     width: 25%;
     margin: 2%;
     margin-left: 37%;
+    display: flex;
+    justify-content: center;
 }
 .subtl {
     background-color: rgba(0, 0, 0, .8);
@@ -92,6 +94,10 @@ body {
     margin-left: 2%;
     margin-right: 1%;
     border-radius: 20px;
+}
+
+.boton{
+    border-radius: 40px;
 }
 
 
