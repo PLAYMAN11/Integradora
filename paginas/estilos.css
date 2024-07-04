@@ -1,0 +1,99 @@
+body{
+    background-color: #1e1e2a;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    margin: 8rem 0 0 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+}
+
+.inicio{
+    border: 1px solid #24243d;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+    width: 27rem;
+    height: 37rem;
+}
+.forma{
+    display: grid;
+    place-content: center;
+    box-sizing: border-box;
+    background-color: #24243d;
+    background-size: cover;
+    height: 100%;   
+}
+
+h1{
+    display: grid;
+    place-content: center;
+    margin-top: -5rem;
+    font-size: 2.5rem;
+    margin-bottom: 75px;
+    color: white;
+}
+
+input{
+    background: transparent;
+    width: 18rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    border: 2px solid #b12bb1;
+    color: white;
+    border-radius: 1rem;
+    padding: 5px;
+}
+
+::placeholder{
+    color: rgb(120, 116, 119);
+    padding: 4px;
+}
+
+label{
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+button{
+    margin-top: 2rem;
+    width: 19rem;
+    height: 2.4rem;
+    font-weight: bold;
+    border: 2px solid #962596;
+    border-radius: 1rem;
+    background-color: #b12bb1;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+}
+
+p{
+    margin:1.6px 0 -16px 0 ;
+    padding: 4.8px;
+}
+
+a{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.bxs-user{
+    display: block;
+    position: absolute;
+    padding: 230px 0 0 335px;
+}
+
+.bxs-lock-alt{
+    display: block;
+    position: absolute;
+    padding: 322px 0 0 335px;
+}
+
+
+
+
+
