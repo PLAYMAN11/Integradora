@@ -5,7 +5,8 @@ function Animacion() {
             const value = bar.style.getPropertyValue('--bar-value');
             setTimeout(() => {
                 bar.style.width = value;
-            }, 100);
+            
+            },);
         });
     });
 }
