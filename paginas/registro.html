@@ -10,14 +10,22 @@
             <form class="forma">
                 <h1>Registrar Cuenta</h1>
             <div class="FormIzquierdo">
-            <label>Nombre de usuario</label>
-            <div class="ContenedorInput"><input type="text" placeholder="Ingresa tu usuario"><i class="bx bxs-user"></i></div>
+            <label>Nombre(s)</label>
+            <div class="ContenedorInput" ><input type="text" placeholder="Ingresa tus nombre(s)" id="Nombre"></div>
+            <label>Apellido(s)</label>
+            <div class="ContenedorInput"><input type="text" placeholder="Ingresa tus Apellido(s)" id="Apellido"></div>
             <label>Contraseña</label>
-            <div class="ContenedorInput"><input type="password" placeholder="Ingresa tu contraseña"><i class="bx bxs-lock-alt"></i></div>
-            <button class = "iniciodesesion"><a href="principal.html" style="text-decoration: none; color: white;">Inicio de sesión</a></button>
+            <div class="ContenedorInput"><input type="password" placeholder="Ingresa tu contraseña" id="Contraseña"></div>
+            <label>Correo</label>
+            <div class="ContenedorInput"><input type="email" placeholder="Ingresa tu email" id="Correo"></div>
+            <label>Teléfono</label>
+            <div class="ContenedorInput"><input type="text" placeholder="Ingresa tu teléfono" id="Telefono"></div>
+            <label>Fecha de nacimiento</label>
+            <div class="ContenedorInput"><input type="date" placeholder="Ingresa tu fecha de nacimiento" id="FechaNac"></div>
+            <button type="button" class="iniciodesesion" onclick="Registro()">Registrarse Ahora!</button>
+        </form>
             <div class="ladoDerecho">
             </div>
-            </form>
-        </div>
+            <script src="../assets/Scripts.js"></script>
     </body>
 </html>
