@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>MyNetService</title>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="../Styles/StyleIndex.css">
-    </head>
-    <body>
-        <div class="inicio">
-            <form class="forma">
+<head>
+    <title>MyNetService</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../Styles/StyleIndex.css">
+</head>
+<body>
+    <div class="inicio">
+        <form class="forma">
+            <div class="Regresar">
                 <h1>Registrar Cuenta</h1>
-            <div class="FormIzquierdo">
-            <label>Nombre(s)</label>
-            <div class="ContenedorInput" ><input type="text" placeholder="Ingresa tus nombre(s)" id="Nombre"></div>
-            <label>Apellido(s)</label>
-            <div class="ContenedorInput"><input type="text" placeholder="Ingresa tus Apellido(s)" id="Apellido"></div>
-            <label>Contraseña</label>
-            <div class="ContenedorInput"><input type="password" placeholder="Ingresa tu contraseña" id="Contraseña"></div>
-            <label>Correo</label>
-            <div class="ContenedorInput"><input type="email" placeholder="Ingresa tu email" id="Correo"></div>
-            <label>Teléfono</label>
-            <div class="ContenedorInput"><input type="text" placeholder="Ingresa tu teléfono" id="Telefono"></div>
-            <label>Fecha de nacimiento</label>
-            <div class="ContenedorInput"><input type="date" placeholder="Ingresa tu fecha de nacimiento" id="FechaNac"></div>
-            <button type="button" class="iniciodesesion" onclick="Registro()">Registrarse Ahora!</button>
-        </form>
-            <div class="ladoDerecho">
+                <a href="iniciarSesion.html"><img src="../Iconos-Imagenes/flecha-correcta.png" alt=""> Regresar</a>
             </div>
-            <script src="../assets/Scripts.js"></script>
-    </body>
+            <div class="FormIzquierdo">
+                <label>Nombre(s)</label>
+                <div class="ContenedorInput"><input type="text" placeholder="Ingresa tus nombre(s)" id="Nombre"></div>
+                <label>Apellido(s)</label>
+                <div class="ContenedorInput"><input type="text" placeholder="Ingresa tus Apellido(s)" id="Apellido"></div>
+                <label>Contraseña</label>
+                <div class="ContenedorInput"><input type="password" placeholder="Ingresa tu contraseña" id="Contraseña"></div>
+                <label>Correo</label>
+                <div class="ContenedorInput"><input type="email" placeholder="Ingresa tu email" id="Correo"></div>
+                <label>Teléfono</label>
+                <div class="ContenedorInput"><input type="text" placeholder="Ingresa tu teléfono" id="Telefono"></div>
+                <label>Fecha de nacimiento</label>
+                <div class="ContenedorInput"><input type="date" placeholder="Ingresa tu fecha de nacimiento" id="FechaNac"></div>
+                <button type="button" class="iniciodesesion" onclick="Registro()">Registrarse Ahora!</button>
+            </div>
+        </form>
+        <div class="ladoDerecho">
+            <h1>Empieza a mantener constancia de tus finanzas</h1>
+        </div>
+    </div>
+    <script src="../assets/Scripts.js"></script>
+</body>
 </html>

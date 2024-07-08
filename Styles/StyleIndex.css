@@ -1,58 +1,54 @@
 header {
     background-color: #1e1e2a;
-    left: 0; 
-	top: 0;
+    margin: 0 0 0 0;
     display: flex;
     justify-content: space-between;
     border-top: 5px solid #b12bb1;
     position: fixed;
     width: 100%; 
-    box-shadow:  0 0 1rem 0  rgb(0, 0, 0);
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0);
     align-content: center;
     font-family: Arial, Helvetica, sans-serif;
     z-index: 1;
 }
- .titulo{
-   margin: 1.5% 2% 1.2% 5%;;
-   font-size:  200%;
+.titulo{
+    margin: 1.5% 2% 1.2% 5%;
+    font-size: 200%;
 } 
-
 body {
     background-color: #1e1e2a;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    padding-top: 80px;
+    padding-top: 0px;
     margin: 0;
 }
 .contenedorPresentacion {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin:  15% 0 0  5%;
+    padding: 15% 0 0 5%;
 }
 .descripcion {
     display: inline-block;
     font-size: 400%;
     vertical-align: middle;
     width: 100%;
-    margin: 0 0 0 0;
+    margin: 0;
 }
 .descripcion2 {
     display: flex;
     font-size: 125%;
     vertical-align: middle;
-    margin:  1% 0 5% 5%;
+    margin: 1% 0 5% 5%;
     color: #a6a6a6;
 }
-
 .bar-chart-container {
     display: flex;
     flex-direction: column;
     align-items: flex-end; /* Alinea las barras a la derecha */
     width: 100%; /* Ajusta el ancho del contenedor */
 }
-
 .bar {
     background-color: #b12bb1;
     box-shadow: 0 0px 5px #962596;
@@ -61,76 +57,64 @@ body {
     width: 0; /* Ancho inicial */
     transition: width 1.5s ease; /* Animación de transición */
 }
-
 .bar::before {
     content: ''; /* Añade contenido vacío para permitir el ancho */
     display: block;
     height: 100%;
     background-color: inherit;
 }
-
-
 .Registrarse {
     display: flex;
     justify-content: center;
-    margin:  0% 0 16% 5%;
-  cursor: pointer;
-  position: relative;
-  padding: 10px 24px;
-  font-size: 18px;
-  color: #f2f2f2;
-  border: 2px solid #b12bb1;
-  border-radius: 34px;
-  background-color: transparent;
-  font-weight: 600;
-  transition: 0.2s;
-  overflow: hidden;
+    margin: 0 0 16% 5%;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 24px;
+    font-size: 18px;
+    color: #f2f2f2;
+    border: 2px solid #b12bb1;
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: 0.2s;
+    overflow: hidden;
 }
-
 .Registrarse::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  scale: 0;
-  z-index: -1;
-  background-color: #b12bb1;
-  transition: all 0.2s;
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: #b12bb1;
+    transition: all 0.2s;
 }
-
 .Registrarse:hover::before {
-  scale: 3;
+    scale: 3;
 }
-
 .Registrarse:hover {
-  color: #f4f4f4;
-  scale: 1.1;
-  box-shadow: 0 0px 20px #962596;
+    color: #f4f4f4;
+    scale: 1.1;
+    box-shadow: 0 0px 20px #962596;
 }
-
 .Registrarse:active {
-  scale: 1;
+    scale: 1;
 }
-
 .Subtitulo {
     display: flex;
     font-size: 250%;
-    margin:  0% 0 0% 5%;
-
+    margin: 0 0 0 5%;
 }
 .Subtitulotxt {
     display: flex;
     font-size: 125%;
-    margin:  2% 0% 0% 0%;
-    padding: 3% 3% 3% 3%;
-   
-    
+    margin: 2% 0 0 0;
+    padding: 3%;
 }
-
-.SobreNosotros{
+.SobreNosotros {
     display: flex;
     background-color: #282c3c;
     justify-content: center;
@@ -138,75 +122,95 @@ body {
     text-align: center;
     font-size: 100%;
 }
-
-.txt {
-
-}
-
 /* PAGINA INICIO DE SESION Y REGISTRO */
-.inicio{
-    width: 100%;
+.inicio {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    width: 100%; 
+    margin: 0px 0 0 0;
 }
 .forma {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     background-color: #24243d;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
-    margin: -80px 0 0 0;
     width: 50%;
     height: 100vh; 
-
+    padding: 2%;
 }
-.forma h1{
-    margin:  0 0 0 0;
-    padding: 5% 0 7% 5%;
-    justify-content: left;
+.forma .Regresar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 3% 7% 0%;
+    align-items: center;
+    width: 100%;
+}
+.forma h1 {
+    margin: 0;
     font-size: 2.5rem;
     color: white;
 }
-
-.forma .FormIzquierdo{
+.forma a img {
+    width: 13px;
+    height: 13px;
+    rotate: 180deg;
+    filter: grayscale(50%) invert(100%);
+}
+.forma a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.forma .FormIzquierdo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    margin: 10% 0 0% 0%;
-    height: 55%;
+    justify-content: flex-start;
     width: 100%;
-
 }
-
 .ContenedorInput {
     width: 90%;
     font-size: 1rem;
     color: white;
-    margin: 0% 0 5% 10%;
-
+    margin: 0 0 5% 0;
 }
-
-.FormIzquierdo input{
+.FormIzquierdo input {
     background: transparent;
-    width: 80%;
-    height: 1.5rem;
+    width: 100%;
+    height: 1.2rem;
     border: 2px solid #b12bb1;
     border-radius: 20px;
     color: white;
 }
-
-::placeholder{
+.FormIzquierdoIniciarSesion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    
+}
+.FormIzquierdoIniciarSesion input{
+    background: transparent;
+    width: 100%;
+    height: 1.2rem;
+    border: 2px solid #b12bb1;
+    border-radius: 20px;
+    color: white;
+    }
+::placeholder {
     color: rgb(120, 116, 119);
     padding: 4px;
 }
-
-.forma label{
+.forma label {
     font-size: 1rem;
     font-weight: bold;
-    margin: 0% 0 1% 5%;
+    margin: 0 0 1% 0;
 }
- 
-.forma button{
-    margin-top: 2rem;
-    margin: 0 0 0 5%;
-    width: 85%;
-    
+.forma button {
+    width: 90%;
     font-weight: bold;
     border: 2px solid #962596;
     border-radius: 1rem;
@@ -215,16 +219,19 @@ body {
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
 }
-
-.forma p{
-    margin:1.6px 0 -16px 0 ;
-    padding: 4.8px;
+.ladoDerecho {
+    width: 50%;
+    height: 100vh;
+}
+.ladoDerecho h1{
+    display: flex;
+    justify-content: right;
+    margin: 2% 1% 0 5%;
+    font-size: 2rem;
+    color: white;
 }
 
-.forma a{
-    cursor: pointer;
-    font-weight: bold;
-}
+
 
 
 

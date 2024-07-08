@@ -41,3 +41,42 @@ function Registro(){
     postData();
 }
 }
+
+function IniciarSesion(){
+    var correo = document.getElementById("Correo").value;
+    var contraseña = document.getElementById("Contraseña").value;
+
+    if(correo == "" || contraseña == ""){
+        alert("Por favor llene todos los campos");
+    }else{
+        async function postData() {
+            try {
+            const response = await fetch('http://localhost:3000/usuarios/IniciarSesion', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "CorreoUsuario": correo,
+                    "Contraseña": contraseña
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error("Error en la respuesta del servidor: " + response.status);
+            }
+            const data = await response.json(); 
+            if(data.length == 0){
+                alert("Correo o contraseña incorrectos");
+            }else{
+                alert("Inicio de sesión completado con éxito");
+                window.location.href = "index.html";
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert("Error al procesar la solicitud: " + error.message);
+        }
+    }
+    postData();
+}
+}	
