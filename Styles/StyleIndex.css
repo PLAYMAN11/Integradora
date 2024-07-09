@@ -230,8 +230,42 @@ body {
 /* PAGINA DE REGISTRO */
 
 
+/* PAGINA PRINCIPAL*/   
 
 
+/*pagina de perfil*/
+
+.perfil{
+    margin: 5% 0 0 0;
+    width: 50%;
+    height: 50%;
+    background-color: #282c3c;
+    border-radius: 4px;
+}
+.datosperfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0 0 0;
+    height: 50%;
+    width: 50%;
+    border-radius: 5px;
+    background: transparent;
+    border: 2px solid #2a334e;
+}
+
+.fotodeperfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0 0 0;
+    height: 50%;
+    width: 50%;
+    border-radius: 5px;
+    background: transparent;
+    border: 2px solid #2a334e;
+}
 
 
 
