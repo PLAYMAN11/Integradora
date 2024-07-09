@@ -1,4 +1,4 @@
-header {
+.Promocional {
     background-color: #1e1e2a;
     margin: 0 0 0 0;
     display: flex;
@@ -245,7 +245,21 @@ body {
     font-size: 2rem;
     color: white;
 }
+/* PAGINA MAIN DE SESION INICIADA */
 
+header.SesionIniciada{
+    margin: 0 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 5px solid #b12bb1;
+    position: fixed;
+    width: 100%; 
+    align-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 1;
+    padding: 0 0 0 0;
+}
 
 
 

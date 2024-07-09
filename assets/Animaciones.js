@@ -10,7 +10,8 @@ function Animacion() {
         });
     });
 }
-Animacion();
+
+
 
 
 

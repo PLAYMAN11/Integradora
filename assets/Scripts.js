@@ -1,4 +1,5 @@
 
+// Funcion para registrar un usuario
 function Registro(){
     var nombre = document.getElementById("Nombre").value;
     var apellido = document.getElementById("Apellido").value;
@@ -42,6 +43,7 @@ function Registro(){
 }
 }
 
+//Funcion Para iniciar sesion
 function IniciarSesion(){
     var correo = document.getElementById("Correo").value;
     var contraseña = document.getElementById("Contraseña").value;
@@ -80,3 +82,13 @@ function IniciarSesion(){
     postData();
 }
 }	
+
+//Funcion para mandar a llamar el headerMain
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('http://localhost:3000/headermain').then(response => response.text()).then(html => {
+            document.getElementById('headerMain').innerHTML = html;
+        })
+        .catch(error => {
+            console.error('Error al cargar la vista parcial:', error);
+        });
+});
