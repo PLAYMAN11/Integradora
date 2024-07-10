@@ -1,3 +1,5 @@
+const { get } = require("http");
+
 function Animacion() {
     document.addEventListener('DOMContentLoaded', () => {
         const bars = document.querySelectorAll('.bar');
@@ -9,6 +11,14 @@ function Animacion() {
             },);
         });
     });
+}
+function DisplayMenu() {
+    const menu = document.getElementById("Desplegable");
+    if(menu.style.display == "flex"){
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
 }
 
 

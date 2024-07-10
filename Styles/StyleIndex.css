@@ -17,6 +17,25 @@
     margin: 1.5% 2% 1.2% 5%;
     font-size: 200%;
 } 
+header.mainHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%; 
+    align-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+    z-index: 1;
+    padding: 0 0 0 0%;
+    height: 10%;
+
+}
+header.mainHeader div{
+    margin: 0 0 0 0%;
+
+}
+
 header a{
     margin: 0 5% 0 0;
     text-decoration: none;
@@ -26,6 +45,14 @@ header a:hover{
     transition: 0.2s;
     color: #ff2bb5;
     text-shadow: 2px 2px 5px #ffffff;
+}
+header nav{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    transition: 0.5s;
+
 }
 body {
     background-color: #1e1e2a;

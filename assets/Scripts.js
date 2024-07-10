@@ -72,7 +72,7 @@ function IniciarSesion(){
                 alert("Correo o contraseña incorrectos");
             }else{
                 alert("Inicio de sesión completado con éxito");
-                window.location.href = "index.html";
+                window.location.href = "PaginaMainSesionIniciada.html";
             }
         } catch (error) {
             console.error('Error:', error);
