@@ -239,34 +239,42 @@ body {
 div.perfil{
     background-color: #282c3c;
     border-radius: 10px;
-    width: 75%;
-    border:2px solid #2a334e;
+    width: 70%;
+    border:2px solid #2a334e;;    
+    height: 90%;
+    margin: 0 1% 0 0;
 }
 
 
 .datosperfil{
-    display: flex;
-    margin: 1% 0 20px 0;
+    margin: 0% 0 20px 0;
     border-radius: 5px;
     background: transparent;
     border: 2px solid #2a334e;
     color: white;
-    font-size: 1.5rem;
-    outline: none;
+    font-size: 18px;
+    overflow: hidden;
+    position: relative;
 }
 
 
 img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 10% 0 0 0;
     height: 150px;
     width: 150px;
     border-radius: 50%;
     background: transparent;
     object-fit: cover;
-    border: 4px solid #2a334e ;
+}
+
+.fotodeperfil{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    background-image: linear-gradient(1deg,#2a334e 10%, #1e1e1e 90%);
+    border-radius: 10px;
+    border: 3px solid #2a334e;
+    max-height: 20%;
 }
 
 
@@ -275,7 +283,12 @@ div.Perfiles{
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 2% 0 2% 0;
-    
+}
+.perfiles{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 2% 0 3% 0;
 }
 
 .botonperfil{
@@ -291,34 +304,59 @@ div.Perfiles{
     font-weight: 600;
     transition: 0.2s;
     overflow: hidden;
-
 }
 
 .tituloperfil{
     display: flex;
     justify-content: left;
-    margin: 0 0 0 1%;
+    margin: 0 0 2% 1%;
     font-size: 2.5rem;
     color: white;
 }
 
 .divisoresperfil{
-    display: flex;
+    display: flex; 
+    align-items: first baseline;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 0 0 0 0;
+    margin: 0 0 0 1%;
     color: white;
-    font-size: 18¿px;
+    font-size: 18px;
     outline: none;
 }
 .divisoresperfil label{
     color: #a8a8b0;
+    margin: 0 0 0 1%;
 }
 
 .divisiondebotonperfil{
     display: flex;
-    justify-content: center;
-    margin: 0 0 0 0;
+    justify-content:space-between;
+    margin: 0 1% 0 0;
+}
+
+.divisoresperfil input{
+    width: 90%;
+    height: 2rem;
+}
+
+.sizedeinput{
+    width: 80%;
+}
+
+.sizedeinput textarea{
+    width: 80%;
+}
+
+.datosperfil2{
+    margin: 0% 0 20px 0;
+    border-radius: 5px;
+    background: transparent;
+    border: 2px solid #2a334e;
+    color: white;
+    font-size: 18px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: block;
+    max-width: 100%;
 }
 
 
