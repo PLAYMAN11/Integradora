@@ -26,12 +26,43 @@ header.mainHeader{
     font-family: Arial, Helvetica, sans-serif;
     margin: 2% 0 0 2%;
     height: 10%;
+header.mainHeader{
+    display: flex;
+    width: 96%; 
+    align-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2% 0 0 2%;
+    height: 10%;
 }
 header a:hover{
     transition: 0.2s;
     color: #ff2bb5;
     text-shadow: 2px 2px 5px #ffffff;
 }
+header nav{
+    display: flex;
+    opacity: 0;
+    align-items: center;
+    width: 100%;
+    transition: 0.5s;
+    
+}
+header nav div{
+    transition: 0.3s;
+}
+header nav a{
+    text-decoration: none;
+    color: white;
+}
+header button{
+    background-color: #ff2bb5;;
+    border: px solid black;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+}
+
 header nav{
     display: flex;
     opacity: 0;
@@ -64,6 +95,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     padding-top: 0px;
+    margin: 0;
+    border-top: 2px solid #b12bb1;
     margin: 0;
     border-top: 2px solid #b12bb1;
 }
