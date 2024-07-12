@@ -1,5 +1,6 @@
 .Promocional {
-    background-color: #1e1e2a;
+    background-image: url(/Iconos-Imagenes/header.jpg);
+    background-size:79%;
     margin: 0 0 0 0;
     display: flex;
     justify-content: space-between;
@@ -16,6 +17,7 @@
 .titulo{
     margin: 1.5% 2% 1.2% 5%;
     font-size: 200%;
+    
 } 
 header.mainHeader{
     display: flex;
@@ -55,7 +57,9 @@ header button{
 }
 
 body {
-    background-color: #1e1e2a;
+    background-image: url(/Iconos-Imagenes/bck3.jpg);
+    background-size: cover;
+    background-color: #1c041f;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -75,16 +79,19 @@ body {
     font-size: 400%;
     vertical-align: middle;
     width: 100%;
-    margin: 0;
+    margin-top: -15%;
     transition: 0.2s;
-    text-shadow: 0.2px 0.2px 2px #ffffff;
+    text-shadow: 4px 4px 4px #000000;
+    
 }
 .descripcion2 {
-    display: flex;
+    display: inline-block;
+    margin-top: -20%;
+    margin-left: 5%;
     font-size: 125%;
     vertical-align: middle;
-    margin: 1% 0 5% 5%;
-    color: #a6a6a6;
+    color: #ffffff;
+    text-shadow: 4px 4px 4px #000000;
 }
 .bar-chart-container {
     display: flex;
@@ -110,12 +117,13 @@ body {
     display: flex;
     justify-content: center;
     margin: 0 0 16% 5%;
+    margin-top: -5%;
     cursor: pointer;
     position: relative;
     padding: 10px 24px;
     font-size: 18px;
     color: #f2f2f2;
-    border: 2px solid #b12bb1;
+    border: 2px solid #a81aa8;
     border-radius: 34px;
     background-color: transparent;
     font-weight: 600;
@@ -150,22 +158,58 @@ body {
     display: flex;
     font-size: 250%;
     margin: 0 0 0 5%;
+    margin-left: 40%;
+    text-shadow: 4px 4px 4px #000000;
 }
 .Subtitulotxt {
     display: flex;
-    font-size: 125%;
-    margin: 2% 0 0 0;
-    padding: 3%;
+    font-size: 150%;
+    margin: auto;
+    padding: 1.5%;
+    text-shadow: 4px 4px 4px #000000;
+}
+.subtl{
+    display: flex;
+    justify-content: center;
 }
 .SobreNosotros {
+    background-image: url(/Iconos-Imagenes/TextBck.jpg);
+    background-size: cover;
     display: flex;
-    background-color: #282c3c;
-    justify-content: center;
+    border-radius: 20px;
+    background-size: cover;
     align-items: center;
     text-align: center;
     font-size: 100%;
 }
 /* PAGINA INICIO DE SESION Y REGISTRO */
+.iniciodesesion{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 100%;
+    
+
+}
+.imglog{
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    margin-left: 39%;
+    
+}
+.cuentadinero{
+    margin-left: 125%;
+    margin-top: -53%;
+    width: 400px;
+    border-radius: 30px;
+}
+.cerdo{
+    margin-top: -76%;
+    margin-left: 135%;
+    width: 300px;
+    
+}
 .inicio {
     display: flex;
     justify-content: space-between; 
@@ -191,6 +235,19 @@ body {
     align-items: center;
     width: 100%;
 }
+
+.regist {
+    
+    margin-top: 3.5%;
+    margin-bottom: 3.5%;
+    
+}
+.regist2{
+    display:flex;
+    justify-content: center;
+    margin-top: 20%;
+}
+
 .forma h1 {
     margin: 0;
     font-size: 2.5rem;
@@ -223,10 +280,12 @@ body {
 .FormIzquierdo input {
     background: transparent;
     width: 100%;
-    height: 1.2rem;
+    height: 2rem;
     border: 2px solid #b12bb1;
     border-radius: 20px;
     color: white;
+    
+    
 }
 .FormIzquierdoIniciarSesion{
     display: flex;
@@ -238,7 +297,7 @@ body {
 .FormIzquierdoIniciarSesion input{
     background: transparent;
     width: 100%;
-    height: 1.2rem;
+    height: 2.5rem;
     border: 2px solid #b12bb1;
     border-radius: 20px;
     color: white;
@@ -253,7 +312,8 @@ body {
     margin: 0 0 1% 0;
 }
 .forma button {
-    width: 90%;
+    width: 40%;
+    height: 1.9rem;
     font-weight: bold;
     border: 2px solid #962596;
     border-radius: 1rem;
@@ -261,17 +321,21 @@ body {
     color: white;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+    margin-left: 30%;
+    margin-top: -3%;
 }
 .ladoDerecho {
     width: 50%;
     height: 100vh;
+    margin-left: 150%;
+    margin-top: -60%;
+    
 }
-.ladoDerecho h1{
-    display: flex;
-    justify-content: right;
-    margin: 2% 1% 0 5%;
-    font-size: 2rem;
-    color: white;
+.ladoDerecho2{
+    width: 50%;
+    height: 100vh;
+    margin-left: 2.9%;
+    margin-top:-1%;
 }
 /* PAGINA MAIN DE SESION INICIADA */
 
@@ -287,6 +351,39 @@ header.SesionIniciada{
     font-family: Arial, Helvetica, sans-serif;
     z-index: 1;
     padding: 0 0 0 0;
+}
+.txt{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    text-shadow: 4px 4px 4px #000000;
+}
+/* agregado Haciel González*/
+.pic1{
+
+    height: 90%;
+    width: 90%;
+    border-radius: 20%;
+    transition: ease-in .1s;
+transition: ease-in .1s;
+}
+.pic1:hover
+{
+    transform: scale(1.1);
+}
+.pic2{
+    
+    display: flex;
+    margin-left: 150%;
+    height: 140%;
+    width: 140%;
+    border-radius: 20%;
+    transition: ease-in .1s;
+
+}
+.pic2:hover
+{
+    transform: scale(1.1);
 }
 
 

@@ -9,22 +9,33 @@
     <div class="inicio">
         <form class="forma">
             <div class="Regresar">
-                <h1>Iniciar Sesion</h1>
+                <h1>Iniciar sesión</h1>
                 <a href="../index.html"><img src="../Iconos-Imagenes/flecha-correcta.png" alt=""> Regresar</a>
             </div>
             <div class="FormIzquierdoIniciarSesion">
-                <label>Ingresa tu Correo</label>
-                <div class="ContenedorInput"><input type="email" placeholder="Ingresa tu email" id="Correo"></div>
-                <label>Ingresa tu contraseña Contraseña</label>
-                <div class="ContenedorInput"><input type="password" placeholder="Ingresa tu contraseña" id="Contraseña"></div>
-                <button type="button" class="iniciodesesion" onclick="IniciarSesion()">Iniciar Sesion</button>
-                <a href="registro.html">No tienes una cuenta? Registrate ahora</a>
+                
+                <!-- IMPUT CORREO: -->
+                <label>Correo</label>
+                <div class="regist"><input type="email" placeholder="Email" id="Correo"></div>
+
+                <!-- IMPUT CONTRASEÑA: -->
+                <label>Contraseña</label>
+                <div class="regist"><input type="password" placeholder="Ingresa tu contraseña" id="Contraseña"></div>     
+                
+                <!-- BOTON INICIO DE SESIÓN -->         
+                <h1><button type="button" class="iniciodesesion" onclick="IniciarSesion()">Iniciar sesion</button></h1>
+                <a href="registro.html" class="regist2">¿No tienes una cuenta? Registrate ahora</a>
+                
+                
+            <!-- IMAGEN DE LA DERECHA --> 
             </div>
-        </form>
+            <img class="cuentadinero" src="/Iconos-Imagenes/cuentadinero.jpg">
+        
         <div class="ladoDerecho">
-            <h1>Bueno Verte devuelta!</h1>
+            <h1>¡Hola de nuevo!</h1>
         </div>
+    </form>
     </div>
     <script src="../assets/Scripts.js"></script>
 </body>
-</html>
+</html> 
