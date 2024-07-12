@@ -44,7 +44,7 @@ function Registro(){
 }
 
 //Funcion Para iniciar sesion
-function IniciarSesion(){
+async function IniciarSesion(){
     var correo = document.getElementById("Correo").value;
     var contraseña = document.getElementById("Contraseña").value;
 
@@ -92,3 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error al cargar la vista parcial:', error);
         });
 });
+
+//Funcion para mandar a llamar el footerMain
+
+

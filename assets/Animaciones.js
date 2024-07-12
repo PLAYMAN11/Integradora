@@ -16,10 +16,12 @@ function DisplayMenu() {
     const menu = document.getElementById("Desplegable");
     const navs = document.querySelectorAll('header nav div');
     if(menu.style.opacity == "1"){
+        let margen = -15;
         menu.style.opacity = "0";
         menu.style.justifyContent = "left";
         navs.forEach(navs => {
-            navs.style.margin = "0 0 0 0";
+            navs.style.margin = `0 0 0 ${margen}%`;
+            margen = margen - 10;
         });
 
     } else {
