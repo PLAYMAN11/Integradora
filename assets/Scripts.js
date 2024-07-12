@@ -60,10 +60,10 @@ function IniciarSesion(){
                 },
                 body: JSON.stringify({
                     "CorreoUsuario": correo,
-                    "Contraseña": contraseña
-                })
+                    "Contraseña": contraseña,
+                }),
             });
-
+        
             if (!response.ok) {
                 throw new Error("Error en la respuesta del servidor: " + response.status);
             }
