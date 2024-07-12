@@ -59,6 +59,30 @@ header button{
 
 }
 
+header nav{
+    display: flex;
+    opacity: 0;
+    align-items: center;
+    width: 100%;
+    transition: 0.5s;
+    
+}
+header nav div{
+    transition: 0.3s;
+}
+header nav a{
+    text-decoration: none;
+    color: white;
+}
+header button{
+    background-color: #ff2bb5;;
+    border: px solid black;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+}
+
 body {
     background-size: cover;
     background-color: #201c2c;
@@ -66,6 +90,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     padding-top: 0px;
+    margin: 0;
+    border-top: 2px solid #b12bb1;
     margin: 0;
     border-top: 2px solid #b12bb1;
 }
@@ -210,9 +236,9 @@ body {
     border-radius: 30px;
 }
 .cerdo{
-    margin-top: -76%;
-    margin-left: 135%;
-    width: 300px;
+    margin-top: -85%;
+    margin-left: 130%;
+    width:400px;
     
 }
 .inicio {
@@ -336,7 +362,7 @@ body {
     margin-top: -60%;
     
 }
-.ladoDerecho2{
+.ladoDerecho3{
     width: 50%;
     height: 100vh;
     margin-left: 2.9%;
@@ -417,7 +443,7 @@ div.perfil{
 }
 
 
-img{
+.Ailton{
     margin: 10% 0 0 0;
     height: 150px;
     width: 150px;
