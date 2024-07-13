@@ -29,7 +29,7 @@ function Registro(){
             });
 
             if (!response.ok) {
-                throw new Error("Error en la respuesta del servidor: " + response.status);
+                throw new Error("Error en la respuesta del servidor: " +response.status);
             }
             const data = await response.text(); 
             alert("Registro completado con éxito");
@@ -65,7 +65,7 @@ async function IniciarSesion(){
             });
         
             if (!response.ok) {
-                throw new Error("Error en la respuesta del servidor: " + response.status);
+                throw new Error("Error en la respuesta del servidor: " +response.status);
             }
             const data = await response.json(); 
             if(data.length == 0){
@@ -76,7 +76,7 @@ async function IniciarSesion(){
             }
         } catch (error) {
             console.error('Error:', error);
-            alert("Error al procesar la solicitud: " + error.message);
+            alert("Error al procesar la solicitud: " +error.message);
         }
     }
     postData();
@@ -92,7 +92,4 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error al cargar la vista parcial:', error);
         });
 });
-
-//Funcion para mandar a llamar el footerMain
-
 
