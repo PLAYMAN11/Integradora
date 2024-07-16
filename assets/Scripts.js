@@ -62,6 +62,7 @@ async function IniciarSesion(){
                     "CorreoUsuario": correo,
                     "Contraseña": contraseña,
                 }),
+                credentials: 'include'
             });
         
             if (!response.ok) {
@@ -72,8 +73,10 @@ async function IniciarSesion(){
                 alert("Correo o contraseña incorrectos");
             }else{
                 alert("Inicio de sesión completado con éxito");
+                const cookieValue = `jwt=${data.token}; path=${data.path}; expires=${new Date(Date.now() + data.expires)}`;
+                document.cookie = cookieValue;
                 window.location.href = "PaginaMainSesionIniciada.html";
-            }
+                }
         } catch (error) {
             console.error('Error:', error);
             alert("Error al procesar la solicitud: " +error.message);
@@ -87,6 +90,7 @@ async function IniciarSesion(){
 document.addEventListener('DOMContentLoaded', function() {
     fetch('http://localhost:3000/headermain').then(response => response.text()).then(html => {
             document.getElementById('headerMain').innerHTML = html;
+            //Asignar el link a cada div AQUI
         })
         .catch(error => {
             console.error('Error al cargar la vista parcial:', error);
