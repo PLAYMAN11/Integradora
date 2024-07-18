@@ -43,12 +43,12 @@ function DisplayMenu() {
         });
 
     } else {
-        let margen = -15;
+        let margen = -20;
         menu.style.opacity = '0';
         menu.style.justifyContent = "left";
         navs.forEach(navs => {
             navs.style.margin = `0 0 0 ${margen}%`;
-            margen = margen - 10;
+            margen = margen - 0;
         });
     
     }

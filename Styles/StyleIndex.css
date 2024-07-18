@@ -1,17 +1,18 @@
 html, body{
     height: 100%;
+    margin: 0;
 }
 .Promocional {
     background-image: url(/Iconos-Imagenes/header.jpg);
-    background-size:79%;
-    margin: 0 0 5% 0;
+    background-size:100%;
+    margin: 0 0 0% 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 5px solid #b12bb1;
     position: fixed;
     width: 100%; 
-    box-shadow: 0 0 1rem 0 rgb(0, 0, 0);
+    box-shadow: 0 0 0.2rem 0 rgb(0, 0, 0);
     align-content: center;
     font-family: Arial, Helvetica, sans-serif;
     z-index: 1;
@@ -103,7 +104,8 @@ body {
     border-top: 2px solid #b12bb1;
 }
 .presentacion{
-    background-image: url(/Iconos-Imagenes/bck3.jpg);
+
+    background-repeat: no-repeat;
 }
 .contenedorPresentacion {
     display: flex;

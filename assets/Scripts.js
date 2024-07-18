@@ -110,11 +110,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                     break;
                 case 4:
                     a.href = "Compras-Individuales.html";
-                    break;
+                    break;  
                 case 5:
-                    a.href = "Notificaciones.html";
-                    break;    
-                case 6:
                     a.href = "perfil.html"    
                     break;
             }
