@@ -87,13 +87,38 @@ async function IniciarSesion(){
 }	
 
 //Funcion para mandar a llamar el headerMain
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('http://localhost:3000/headermain').then(response => response.text()).then(html => {
-            document.getElementById('headerMain').innerHTML = html;
-            //Asignar el link a cada div AQUI
-        })
-        .catch(error => {
-            console.error('Error al cargar la vista parcial:', error);
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        const response = await fetch('http://localhost:3000/headermain');
+        const html = await response.text();
+        document.getElementById('headerMain').innerHTML = html;
+        const divs = document.querySelectorAll('div.navs a');
+        let index = 0;
+        divs.forEach((a) => {
+            switch (index) {
+                case 0:
+                    a.href = "Linea-de-tiempo.html";
+                    break;
+                case 1:
+                    a.href = "Servicios.html";
+                    break;
+                case 2:
+                    a.href = "Tu-Dinero.html";
+                    break;
+                case 3:
+                    a.href = "Ajustar-Ingresos.html";
+                    break;
+                case 4:
+                    a.href = "Compras-Individuales.html";
+                    break;  
+                case 5:
+                    a.href = "perfil.html"    
+                    break;
+            }
+            index++;
         });
+    } catch (error) {
+        console.error('Error al cargar la vista parcial:', error);
+    }
 });
 
