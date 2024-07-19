@@ -453,8 +453,8 @@ div.perfil{
 }
 
 .fotodeperfil{
-    display: flex;
-    justify-content: center;
+    display: block;
+    text-align: center;
     width: 20%;
     background-image: linear-gradient(1deg,#2a334e 10%, #1e1e1e 90%);
     border-radius: 10px;
