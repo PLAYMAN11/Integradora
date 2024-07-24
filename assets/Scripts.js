@@ -1,4 +1,35 @@
 
+ async function VerificarUsuario() {
+    const cookieHeader = document.cookie;
+    const response = await fetch('http://localhost:3000/usuarios/rqCookieUsuario', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            cookie: cookieHeader
+        })
+    });
+    if (!response.ok) {
+        window.location.href = "http://127.0.0.1:5502/index.html"
+    }
+}
+async function VerificarGuest() {
+    const cookieHeader = document.cookie;
+    const response = await fetch('http://localhost:3000/usuarios/rqCookieGuest', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            cookie: cookieHeader
+        })
+    });
+    if (response.ok) {
+        window.location.href = "http://127.0.0.1:5502/paginas/perfil.html"
+    }
+}
+
 // Funcion para registrar un usuario
 function Registro(){
     var nombre = document.getElementById("Nombre").value;
@@ -43,6 +74,7 @@ function Registro(){
 }
 }
 
+
 //Funcion Para iniciar sesion
 async function IniciarSesion(){
     var correo = document.getElementById("Correo").value;
@@ -75,7 +107,7 @@ async function IniciarSesion(){
                 alert("Inicio de sesión completado con éxito");
                 const cookieValue = `jwt=${data.token}; path=${data.path}; expires=${new Date(Date.now() + data.expires)}`;
                 document.cookie = cookieValue;
-                window.location.href = "PaginaMainSesionIniciada.html";
+                window.location.href = "Linea-de-tiempo.html";
                 }
         } catch (error) {
             console.error('Error:', error);
@@ -103,13 +135,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                     a.href = "Servicios.html";
                     break;
                 case 2:
-                    a.href = "Tu-Dinero.html";
+                    a.href = "Tudinero.html";
                     break;
                 case 3:
-                    a.href = "Ajustar-Ingresos.html";
+                    a.href = "AjustarIngresos.html";
                     break;
                 case 4:
-                    a.href = "Compras-Individuales.html";
+                    a.href = "ComprasIndividuales.html";
                     break;  
                 case 5:
                     a.href = "perfil.html"    
@@ -122,3 +154,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 });
 
+
+    // //Funcion para pasar la pagina traducida
+    // document.addEventListener('OnClick',  e()=> '{
+    //     let nombre = fullPath.substring(fullPath.lastIndexOf('/') + 1);
+    // 
