@@ -591,6 +591,18 @@ div.Perfiles{
     max-width: 100%;
 }
 
+.mostrarNombrePerfil{
+    background: none;
+    border: none;
+    margin-top: 1%;
+}
+
+.mostrarSobremiPerfil{
+    background: none;
+    border: none;
+    margin-top: 1%;
+}
+
 /*pagina de linea de tiempo*/
 .ContenedorGrafica {
     display: flex;
