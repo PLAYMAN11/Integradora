@@ -161,10 +161,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     // 
 //cerrar sesion
 const logout = () => {
-    document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "jwt=; expires=Thu, 01 Jan 2025 00:00:00 UTC; path=/;";
     window.location.href = "../index.html";
 }
 
 const logoutButton = document.querySelector("#logout");
 logoutButton.addEventListener("click", logout);
-// });
