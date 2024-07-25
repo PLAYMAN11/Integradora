@@ -14,6 +14,7 @@
         window.location.href = "http://127.0.0.1:5502/index.html"
     }
 }
+
 //Verificar si el usuario es guest
 async function VerificarGuest() {
     const cookieHeader = document.cookie;
@@ -30,6 +31,7 @@ async function VerificarGuest() {
         window.location.href = "http://127.0.0.1:5502/paginas/perfil.html"
     }
 }
+
 //Funcion para mostrar los datos monetarios del usuario
 async function mostrardinero(){
     const cookieHeader = document.cookie;
@@ -53,6 +55,7 @@ async function mostrardinero(){
 
     }
 }
+
 // Funcion para registrar un usuario
 function Registro(){
     var nombre = document.getElementById("Nombre").value;
@@ -96,6 +99,7 @@ function Registro(){
     postData();
 }
 }
+
 //Funcion Para iniciar sesion
 async function IniciarSesion(){
     var correo = document.getElementById("Correo").value;
@@ -138,6 +142,7 @@ async function IniciarSesion(){
     postData();
 }
 }	
+
 //Funcion para mandar a llamar el headerMain
 document.addEventListener('DOMContentLoaded', async function() {
     try {
@@ -187,3 +192,40 @@ const logout = () => {
 
 const logoutButton = document.querySelector("#logout");
 logoutButton.addEventListener("click", logout);
+
+
+//Funcion para agregar sobre mi
+function agregarSobreMi(){
+    var sobreMi = document.getElementById("SobreMi").value;
+    if(sobreMi == ""){
+        alert("Por favor llene el campo");
+    }else{
+        async function postData() {
+            try {
+            const response = await fetch('http://localhost:3000/usuarios/insAgregarSobremi', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "SOBREMI": sobreMi
+                })
+            });
+        
+            if (!response.ok) {
+                throw new Error("Error en la respuesta del servidor: " +response.status);
+            }
+            const data = await response.text(); 
+            alert("Sobre mi agregado con éxito");
+            window.location.href = "perfil.html";
+        } catch (error) {
+            console.error('Error:', error);
+            alert("Error al procesar la solicitud: " +error.message);
+        }
+    }
+    postData();
+}};
+
+//Funcion para ver sobre mi
+async function verSobreMi(){
+    const response = await fetch('http://localhost:3000/usuarios/obtSobremiPerfil')};
