@@ -13,19 +13,22 @@
         <div class = "tudinerolinea"> 
             <div class = "tudinerocontorno">
                 Ingresos <hr class ="linea1tudinero" style="width: 90%";>
-                                
+                <div id="Ingresos"></div>
             </div>
             <div class = "tudinerocontorno">
                 Egresos <hr class ="linea1tudinero2" style="width: 90%";>
+                <div id="Egresos"></div>
             </div>
             <div class = "tudinerocontorno">
                 Saldo <hr class ="linea2tudinero3" style="width: 90%";>
+                <div id="dineroTotal"></div>
             </div>
         </div>
         <script src="../assets/Scripts.js"> </script>
         <script>   
         document.addEventListener('DOMContentLoaded', function() {
                     VerificarUsuario();
+                    mostrardinero();
                 });
             </script>
         <script src="../assets/Animaciones.js"></script>
