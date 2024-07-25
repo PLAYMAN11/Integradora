@@ -1,4 +1,4 @@
-
+//verificar si el usuario esta iniciado sesion
  async function VerificarUsuario() {
     const cookieHeader = document.cookie;
     const response = await fetch('http://localhost:3000/usuarios/rqCookieUsuario', {
@@ -14,6 +14,7 @@
         window.location.href = "http://127.0.0.1:5502/index.html"
     }
 }
+//Verificar si el usuario es guest
 async function VerificarGuest() {
     const cookieHeader = document.cookie;
     const response = await fetch('http://localhost:3000/usuarios/rqCookieGuest', {
@@ -29,7 +30,29 @@ async function VerificarGuest() {
         window.location.href = "http://127.0.0.1:5502/paginas/perfil.html"
     }
 }
+//Funcion para mostrar los datos monetarios del usuario
+async function mostrardinero(){
+    const cookieHeader = document.cookie;
+    const response = await fetch('http://localhost:3000/usuarios/MostrarDinero', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            cookie: cookieHeader
+        })
+    });
+    if (response.ok) {
+        const data = await response.json();
+        const ingresos = data.Ingresos;
+        const egresos = data.Egresos;
+        const dineroActual = data.DineroActual;
+        document.getElementById("Ingresos").innerHTML = ingresos;
+        document.getElementById("Egresos").innerHTML = egresos;
+        document.getElementById("dineroTotal").innerHTML = dineroActual;
 
+    }
+}
 // Funcion para registrar un usuario
 function Registro(){
     var nombre = document.getElementById("Nombre").value;
@@ -73,8 +96,6 @@ function Registro(){
     postData();
 }
 }
-
-
 //Funcion Para iniciar sesion
 async function IniciarSesion(){
     var correo = document.getElementById("Correo").value;
@@ -117,7 +138,6 @@ async function IniciarSesion(){
     postData();
 }
 }	
-
 //Funcion para mandar a llamar el headerMain
 document.addEventListener('DOMContentLoaded', async function() {
     try {

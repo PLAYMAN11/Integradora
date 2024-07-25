@@ -588,11 +588,10 @@ div.Perfiles{
     border-radius: 10px;
     font-size: 70%;
     background: #282c3c;
-    border: 2px solid #2a334e;
     display:block;
     text-align: center;
     margin: 1% 0 0 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .75);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .2);
 }
 
 .tudinerotitulo{
@@ -603,9 +602,8 @@ div.Perfiles{
     height: 10%;
     background-color: #282c3c;
     border-radius: 10px;
-    border: 2px solid #2a334e;
     padding: 1%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .75);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .2);
 }
 .linea1tudinero2{
     height: 2px;
