@@ -594,13 +594,15 @@ div.Perfiles{
 .mostrarNombrePerfil{
     background: none;
     border: none;
-    margin-top: 1%;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .mostrarSobremiPerfil{
     background: none;
     border: none;
-    margin-top: 1%;
+    margin-top: 5%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /*pagina de linea de tiempo*/

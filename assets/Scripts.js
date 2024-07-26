@@ -225,6 +225,53 @@ function agregarSobreMi(){
         }
     }
     postData();
+    document.addEventListener("none", mostrarSobreMi());
+    document.addEventListener("none", mostrarUsuarioPerfil());
 }};
 
-//Funcion para ver sobre mi
+function mostrarSobreMi(){
+    const cookieHeader = document.cookie;
+    async function postData() {
+        try {
+        const response = await fetch('http://localhost:3000/usuarios/obtSobremiPerfil', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    
+        if (!response.ok) {
+            throw new Error("Error en la respuesta del servidor: " +response.status);
+        }
+        const data = await response.json(); 
+        document.getElementById("SobreMi").value = data[0].SOBREMI;
+        output.textContent = data;
+    } catch (error) {
+        console.error('Error:', error);
+        alert("Error al procesar la solicitud: " +error.message);
+    }
+}};
+
+//funcion para agregar usuario al perfil
+function mostrarUsuarioPerfil(){
+    const cookieHeader = document.cookie;
+    async function postData() {
+        try {
+        const response = await fetch('http://localhost:3000/usuarios/nombreUsuarioPerfil', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    
+        if (!response.ok) {
+            throw new Error("Error en la respuesta del servidor: " +response.status);
+        }
+        const data = await response.json(); 
+        document.getElementById("Nombre").value = data[0].NombreUsuario;
+        output.textContent = data;
+    } catch (error) {
+        console.error('Error:', error);
+        alert("Error al procesar la solicitud: " +error.message);
+    }
+}};

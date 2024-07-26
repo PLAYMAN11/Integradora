@@ -37,7 +37,7 @@
                 </div> 
                 <div class = "divisoresperfil">
                     <div class="sizedeinput">
-                        <label>Sobre mi</label>
+                        <label>Notas</label>
                         <textarea name="Sobre mi" class = "datosperfil2" cols="80" rows="4" placeholder="Escribe aqui..." id = "SobreMi"></textarea>
                     </div>
                 </div>
@@ -49,10 +49,10 @@
             <div class="fotodeperfil">   
                 <img class="Ailton" src="../Iconos-Imagenes/Yop.jfif" alt="Foto de perfil" >
                 <div>
-                    <input type="text" class ="mostrarNombrePerfil" id = mostrarNombreperfil>
+                    <input type="text" oninput="mostrarUsuarioPerfil()"  class ="mostrarNombrePerfil">
                 </div>
                 <div>
-                    <input type="textbox" class ="mostrarSobremiPerfil" id = "mostrarSobremiPerfil">
+                    <input type="textbox" oninput="mostrarSobreMi()" class ="mostrarSobremiPerfil">
                 </div>
             </div>
         </div>
