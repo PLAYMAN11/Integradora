@@ -196,6 +196,7 @@ logoutButton.addEventListener("click", logout);
 
 //Funcion para agregar sobre mi
 function agregarSobreMi(){
+    const cookieHeader = document.cookie;
     var sobreMi = document.getElementById("SobreMi").value;
     if(sobreMi == ""){
         alert("Por favor llene el campo");
@@ -227,5 +228,3 @@ function agregarSobreMi(){
 }};
 
 //Funcion para ver sobre mi
-async function verSobreMi(){
-    const response = await fetch('http://localhost:3000/usuarios/obtSobremiPerfil')};
