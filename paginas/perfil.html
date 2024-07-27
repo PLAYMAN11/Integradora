@@ -37,25 +37,26 @@
                 </div> 
                 <div class = "divisoresperfil">
                     <div class="sizedeinput">
-                        <label>Sobre mi</label>
-                        <textarea name="Sobre mi" class = "datosperfil2" cols="80" rows="4" placeholder="Escribe aqui..." id = "sobremi"></textarea>
+                        <label>Notas</label>
+                        <textarea name="Sobre mi" class = "datosperfil2" cols="80" rows="4" placeholder="Escribe aqui..." id = "SobreMi"></textarea>
                     </div>
                 </div>
                 <div class = "divisiondebotonperfil">
-                    <button class="botonperfil">Guardar</button>
+                    <button class="botonperfil" onclick = "agregarSobreMi()">Guardar</button>
                     <button class="botonperfil" id ="logoutButton" onclick="logout()">Cerrar sesion</button>
                 </div>
             </div>
             <div class="fotodeperfil">   
-                <img class="Ailton" src="../Iconos-Imagenes/Yop.jfif" alt="Foto de perfil" >
+                <img id="profile-img" src="../Iconos-Imagenes/Yop.jfif" alt="Foto de Perfil" class = "Ailton">
                 <div>
-                    hola
+                    <input type="file" id="file-input" style="display: none;" accept="image/*" onclick="">
+                    <img id="upload-icon" src="ruta/al/icono/subir.png" alt="Subir Foto" title="Cambiar Foto de Perfil" class = "Ailton">
                 </div>
                 <div>
-                    hola
+                    <input type="text" oninput="mostrarUsuarioPerfil()"  class ="mostrarNombrePerfil">
                 </div>
                 <div>
-                    hola
+                    <input type="textbox" oninput="mostrarSobreMi()" class ="mostrarSobremiPerfil">
                 </div>
             </div>
         </div>

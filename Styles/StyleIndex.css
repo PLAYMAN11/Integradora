@@ -407,8 +407,8 @@ body {
 .ladoDerecho {
     width: 50%;
     height: 100vh;
-    margin-left: 150%;
-    margin-top: -60%;
+    margin-left: 131%;
+    margin-top: -56%;
     
 }
 .ladoDerecho3{
@@ -499,7 +499,9 @@ div.perfil{
     border-radius: 50%;
     background: transparent;
     object-fit: cover;
+    cursor: pointer;
 }
+
 
 .fotodeperfil{
     display: block;
@@ -591,6 +593,20 @@ div.Perfiles{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     display: block;
     max-width: 100%;
+}
+
+.mostrarNombrePerfil{
+    background: none;
+    border: none;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mostrarSobremiPerfil{
+    background: none;
+    border: none;
+    margin-top: 5%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /*pagina de linea de tiempo*/
