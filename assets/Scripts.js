@@ -275,3 +275,48 @@ function mostrarUsuarioPerfil(){
         alert("Error al procesar la solicitud: " +error.message);
     }
 }};
+
+//cambiar la foto de perfil
+document.getElementById('file-input').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('profile-img').src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
+async function cambiarFotoPerfil(){
+    const imgElement = document.getElementById("profile-img");
+    const foto = imgElement.src;
+
+    if (foto === "") {
+        alert("Por favor seleccione una imagen");
+        return;
+    }
+
+    try {
+        const response = await fetch('http://localhost:3000/usuarios/obtFotoPerfil', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "Foto": foto
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error("Error en la respuesta del servidor: " + response.status);
+        }
+
+        alert("Foto de perfil cambiada con éxito");
+        window.location.href = "perfil.html";
+    } catch (error) {
+        console.error('Error:', error);
+        alert("Error al procesar la solicitud: " + error.message);
+    }
+}
+

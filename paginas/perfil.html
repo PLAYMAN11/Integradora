@@ -47,7 +47,11 @@
                 </div>
             </div>
             <div class="fotodeperfil">   
-                <img class="Ailton" src="../Iconos-Imagenes/Yop.jfif" alt="Foto de perfil" >
+                <img id="profile-img" src="../Iconos-Imagenes/Yop.jfif" alt="Foto de Perfil" class = "Ailton">
+                <div>
+                    <input type="file" id="file-input" style="display: none;" accept="image/*" onclick="">
+                    <img id="upload-icon" src="ruta/al/icono/subir.png" alt="Subir Foto" title="Cambiar Foto de Perfil" class = "Ailton">
+                </div>
                 <div>
                     <input type="text" oninput="mostrarUsuarioPerfil()"  class ="mostrarNombrePerfil">
                 </div>

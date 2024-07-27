@@ -497,7 +497,9 @@ div.perfil{
     border-radius: 50%;
     background: transparent;
     object-fit: cover;
+    cursor: pointer;
 }
+
 
 .fotodeperfil{
     display: block;
