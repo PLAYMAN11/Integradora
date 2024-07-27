@@ -277,14 +277,16 @@ body {
 }
 .cuentadinero{
     margin-left: 125%;
-    margin-top: -53%;
     width: 400px;
     border-radius: 30px;
 }
 .cerdo{
+
     margin-top: -85%;
-    margin-left: 130%;
-    width:400px;
+    margin-left: 120%;
+    width: 600px;
+    height: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     
 }
 .inicio {
