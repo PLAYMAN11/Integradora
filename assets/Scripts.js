@@ -77,7 +77,8 @@ function Registro(){
                     "ApellidoUsuario": apellido,
                     "CorreoUsuario": correo,
                     "FECHA_NACIMIENTO": fecha
-                })
+                }),
+                credentials: 'include'
             });
 
             if (!response.ok) {
