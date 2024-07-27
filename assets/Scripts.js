@@ -288,6 +288,42 @@ document.getElementById('file-input').addEventListener('change', function(event)
     }
 });
 
+//funcion para insertar la foto de perfil
+async function insertarFotoPerfil(){
+    const imgElement = document.getElementById("profile-img");
+    const foto = imgElement.src;
+
+    if (foto === "") {
+        alert("Por favor seleccione una imagen");
+        return;
+    }
+
+    try {
+        const response = await fetch('http://localhost:3000/usuarios/insFotoPerfil', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "FotoPerfil": foto
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error("Error en la respuesta del servidor: " + response.status);
+        }
+
+        alert("Foto de perfil insertada con éxito");
+        window.location.href = "perfil.html";
+    } catch (error) {
+        console.error('Error:', error);
+        alert("Error al procesar la solicitud: " + error.message);
+    }
+}
+
+
+//funcion para cambiar la foto de perfil
+
 async function cambiarFotoPerfil(){
     const imgElement = document.getElementById("profile-img");
     const foto = imgElement.src;
