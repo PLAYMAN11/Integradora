@@ -196,6 +196,7 @@ logoutButton.addEventListener("click", logout);
 
 //Funcion para agregar sobre mi
 function agregarSobreMi(){
+    const cookieHeader = document.cookie;
     var sobreMi = document.getElementById("SobreMi").value;
     if(sobreMi == ""){
         alert("Por favor llene el campo");
@@ -224,8 +225,135 @@ function agregarSobreMi(){
         }
     }
     postData();
+    document.addEventListener("none", mostrarSobreMi());
+    document.addEventListener("none", mostrarUsuarioPerfil());
 }};
 
-//Funcion para ver sobre mi
-async function verSobreMi(){
-    const response = await fetch('http://localhost:3000/usuarios/obtSobremiPerfil')};
+
+function mostrarSobreMi(){
+    const cookieHeader = document.cookie;
+    async function postData() {
+        try {
+        const response = await fetch('http://localhost:3000/usuarios/obtSobremiPerfil', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    
+        if (!response.ok) {
+            throw new Error("Error en la respuesta del servidor: " +response.status);
+        }
+        const data = await response.json(); 
+        document.getElementById("SobreMi").value = data[0].SOBREMI;
+        output.textContent = data;
+    } catch (error) {
+        console.error('Error:', error);
+        alert("Error al procesar la solicitud: " +error.message);
+    }
+}};
+
+//funcion para agregar usuario al perfil
+function mostrarUsuarioPerfil(){
+    const cookieHeader = document.cookie;
+    async function postData() {
+        try {
+        const response = await fetch('http://localhost:3000/usuarios/nombreUsuarioPerfil', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    
+        if (!response.ok) {
+            throw new Error("Error en la respuesta del servidor: " +response.status);
+        }
+        const data = await response.json(); 
+        document.getElementById("Nombre").value = data[0].NombreUsuario;
+        output.textContent = data;
+    } catch (error) {
+        console.error('Error:', error);
+        alert("Error al procesar la solicitud: " +error.message);
+    }
+}};
+
+//cambiar la foto de perfil
+document.getElementById('file-input').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('profile-img').src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
+//funcion para insertar la foto de perfil
+async function insertarFotoPerfil(){
+    const imgElement = document.getElementById("profile-img");
+    const foto = imgElement.src;
+
+    if (foto === "") {
+        alert("Por favor seleccione una imagen");
+        return;
+    }
+
+    try {
+        const response = await fetch('http://localhost:3000/usuarios/insFotoPerfil', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "FotoPerfil": foto
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error("Error en la respuesta del servidor: " + response.status);
+        }
+
+        alert("Foto de perfil insertada con éxito");
+        window.location.href = "perfil.html";
+    } catch (error) {
+        console.error('Error:', error);
+        alert("Error al procesar la solicitud: " + error.message);
+    }
+}
+
+
+//funcion para cambiar la foto de perfil
+
+async function cambiarFotoPerfil(){
+    const imgElement = document.getElementById("profile-img");
+    const foto = imgElement.src;
+
+    if (foto === "") {
+        alert("Por favor seleccione una imagen");
+        return;
+    }
+
+    try {
+        const response = await fetch('http://localhost:3000/usuarios/obtFotoPerfil', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "Foto": foto
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error("Error en la respuesta del servidor: " + response.status);
+        }
+
+        alert("Foto de perfil cambiada con éxito");
+        window.location.href = "perfil.html";
+    } catch (error) {
+        console.error('Error:', error);
+        alert("Error al procesar la solicitud: " + error.message);
+    }
+}
+
