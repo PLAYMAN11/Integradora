@@ -59,10 +59,9 @@ function Registro(){
     var apellido = document.getElementById("Apellido").value;
     var correo = document.getElementById("Correo").value;
     var contraseña = document.getElementById("Contraseña").value;
-    var telefono = document.getElementById("Telefono").value;
     var fecha = document.getElementById("FechaNac").value;
 
-    if(nombre == "" || apellido == "" || correo == "" || contraseña == "" || telefono == "" || fecha == ""){
+    if(nombre == "" || apellido == "" || correo == "" || contraseña == "" || fecha == ""){
         alert("Por favor llene todos los campos");
     }else{
         async function postData() {
@@ -77,7 +76,6 @@ function Registro(){
                     "Contraseña": contraseña,
                     "ApellidoUsuario": apellido,
                     "CorreoUsuario": correo,
-                    "Telefono": telefono,
                     "FECHA_NACIMIENTO": fecha
                 })
             });
@@ -173,18 +171,30 @@ document.addEventListener('DOMContentLoaded', async function() {
         console.error('Error al cargar la vista parcial:', error);
     }
 });
+// //Funcion para pasar la pagina traducida
+// document.addEventListener('OnClick',  e()=> '{
+//     let nombre = fullPath.substring(fullPath.lastIndexOf('/') + 1);
+// 
+// });
 
-
-    // //Funcion para pasar la pagina traducida
-    // document.addEventListener('OnClick',  e()=> '{
-    //     let nombre = fullPath.substring(fullPath.lastIndexOf('/') + 1);
-    // 
 //cerrar sesion
 const logout = () => {
     document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     window.location.href = "../index.html";
 }
-
 const logoutButton = document.querySelector("#logout");
 logoutButton.addEventListener("click", logout);
-// });
+
+//Funcion para mostrar datos CFE
+async function MostrarDatosCFE() {
+    const cookieHeader = document.cookie;
+    const response = await fetch('http://localhost:3000/CFE/ConsultarDatos', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            cookie: cookieHeader
+        })
+    });
+}
