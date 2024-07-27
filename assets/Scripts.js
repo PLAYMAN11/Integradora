@@ -229,6 +229,7 @@ function agregarSobreMi(){
     document.addEventListener("none", mostrarUsuarioPerfil());
 }};
 
+
 function mostrarSobreMi(){
     const cookieHeader = document.cookie;
     async function postData() {
