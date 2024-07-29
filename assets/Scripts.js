@@ -326,7 +326,7 @@ async function cambiarFotoPerfil(){
     const imgElement = document.getElementById("profile-img");
     const foto = imgElement.src;
 
-    if (foto === "") {
+    if (foto == "") {
         alert("Por favor seleccione una imagen");
         return;
     }
