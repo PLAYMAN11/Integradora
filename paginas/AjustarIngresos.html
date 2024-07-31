@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <title>MyNetService</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../Styles/StyleIndex.css">
+</head>
+<body>
+    <div id="headerMain"></div>
+        <div class = "encabezadoComInd">
+            Ajustar Ingresos
+        </div>
+        <div class = "EspacioComprasIndividuales">
+            <div class = "DivisionComInd">
+                <center>
+                    <p style="font-size: 20px;">Mensual</p>
+                    <hr style="width: 90%; background-color: #b12bb1; height: 3px; border: none;">
+                    <div class="FormIzquierdoAjustarIngresos">
+                        <div>
+                            <label>
+                                Monto Mensual
+                            </label>
+                            <div 
+                                class="registAjusIng"><input type="text" placeholder="Ingrese el monto mensual" style="text-align: center">
+                            </div>
+                            <div class="margenesiniciarsesion">
+                                <button type="button" class="btnCompInd" onclick="IngresarIngresoMensual()">Ingresar</button>
+                            </div>
+                        </div>  
+                    </div>                      
+                </center>
+            </div>
+            <div class = "DivisionComInd2">
+                <center>
+                    <p style="font-size: 20px;">Individual</p>
+                    <hr style="width: 90%; background-color: #b12bb1; height: 3px; border: none;">
+                    <div class="FormIzquierdoAjustarIngresos">
+                        <div>
+                            <label>
+                                Nombre Individual
+                            </label>
+                            <div 
+                                class="registAjusIng"><input type="text" placeholder="Ingrese el nombre Individual" style="text-align: center">
+                            </div>
+                            <label>
+                                Monto Individual
+                            </label>
+                            <div 
+                                class="registAjusIng"><input type="text" placeholder="Ingrese el monto Individual" style="text-align: center">
+                            </div>
+                            <div class="margenesiniciarsesion">
+                                <button type="button" class="btnCompInd" onclick="IngresarIngresoIndividual()">Ingresar</button>
+                            </div>
+                        </div>  
+                    </div>  
+                </center>
+            </div>
+        </div>
+    <script src="../assets/Animaciones.js"></script>
+    <script src="../assets/Scripts.js"></script>
+</body>
+</html>
