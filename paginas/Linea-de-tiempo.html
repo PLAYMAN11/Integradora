@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<>
     <header>
         <title>MyNetService</title>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -19,6 +19,7 @@
             id="chartContainer" style="height: 100%; width: 90%;">
         </div>
         <script>
+            async function initChart(){
               const chartOptions = {
             layout: {
                 textColor: 'white',
@@ -29,24 +30,12 @@
         const chart = LightweightCharts.createChart(document.getElementById('chartContainer'), chartOptions);
         const lineSeries = chart.addLineSeries({ color: '#ff2bb5' });
 
-        const data = [
-            { value: Math.random() * 100, time: '2024-01-01' },
-            { value: Math.random() * 100, time: '2024-02-01' },
-            { value: Math.random() * 100, time: '2024-03-01' },
-            { value: Math.random() * 100, time: '2024-04-01' },
-            { value: Math.random() * 100, time: '2024-05-01' },
-            { value: Math.random() * 100, time: '2024-06-01' },
-            { value: Math.random() * 100, time: '2024-07-01' },
-            { value: Math.random() * 100, time: '2024-08-01' },
-            { value: Math.random() * 100, time: '2024-09-01' },
-            { value: Math.random() * 100, time: '2024-10-01' },
-            { value: Math.random() * 100, time: '2024-11-01' },
-            { value: Math.random() * 100, time: '2024-12-01' },
-            // Agrega más datos según sea necesario
-        ];
+        const data = await MostrarUlt12meses();
 
         lineSeries.setData(data);
         chart.timeScale().fitContent();
+    }
+    initChart();
         </script>
         </div>
         </body>
