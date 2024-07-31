@@ -9,48 +9,44 @@
     <div class="inicio">
         <form class="forma">
             <div class="Regresar">
-                <h1>Login</h1>
-                <a href="../indextr.html"><img src="../Iconos-Imagenes/flecha-correcta.png" alt=""> Back</a>
+                <h1>Login</h1> 
+                <a href="../index.html"><img src="../Iconos-Imagenes/flecha-correcta.png" alt=""> back</a>
             </div>
             <div class="FormIzquierdoIniciarSesion">
-                
-                <!-- IMPUT CORREO: -->
+            <div>
                 <label>
                     Email
                 </label>
                 <div 
-                    class="regist"><input type="email" placeholder="Email" id="Correo">
+                    class="regist"><input type="Email" placeholder="Enter your email" style="text-align: center" id="Correo">
                 </div>
-
-                <!-- IMPUT CONTRASEÑA: -->
                 <label>
                     Password
                 </label>
                 <div 
-                    class="regist"><input type="password" placeholder="Enter your password" id="Contraseña">
-                </div>     
-                
-                <!-- BOTON INICIO DE SESIÓN -->         
-                <h1>
+                    class="regist"><input type="password" placeholder="Enter your password" style="text-align: center" id="Contraseña">
+                </div>             
+                <div class="margenesiniciarsesion">
                     <button type="button" class="iniciodesesion" onclick="IniciarSesion()">Login</button>
-                </h1>
-                <a href="registrotr.html" class="regist2">Don't have an account? Register now</a>
-                
-                
-            <!-- IMAGEN DE LA DERECHA --> 
-            </div>
-            <img class="cuentadinero" src="/Iconos-Imagenes/cuentadinero.jpg">
-        
-        <div class="ladoDerecho">
+                </div>
+                <a href="registro.html" class="regist2">Don´t have an account? Register now</a>
+            </div> 
+        </div>
+        </form>
+    <div class="MargenesInciarSes">
+        <div class="ladoDerechoiniciarsesion">
             <h1>Hello again!</h1>
         </div>
-    </form>
+        <div>
+            <img class="cuentadinero" src="/Iconos-Imagenes/cuentadinero.jpg">
+        </div>
+    </div> 
     </div>
     <script src="../assets/Scripts.js"> </script>
-    <script>   
-    document.addEventListener('DOMContentLoaded', function() {
-                VerificarGuest();
-            });
+        <script>   
+        document.addEventListener('DOMContentLoaded', function() {
+                    VerificarGuest();
+                });
         </script>
 </body>
 </html> 

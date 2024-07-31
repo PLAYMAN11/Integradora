@@ -261,12 +261,10 @@ body {
 }
 /* PAGINA INICIO DE SESION Y REGISTRO */
 .iniciodesesion{
+    align-items: center;
     margin-top: 5%;
-    margin-left: 5%;
-    width: 100%;
-    
-
 }
+
 .imglog{
     display: flex;
     width: 150px;
@@ -276,31 +274,28 @@ body {
     
 }
 .cuentadinero{
-    margin-left: 125%;
+    margin-left: 1%;
     width: 400px;
+    height: 300px;
     border-radius: 30px;
 }
 .cerdo{
 
-    margin-top: -85%;
-    margin-left: 120%;
-    width: 600px;
+    margin-top: -75%;
+    margin-left: 115%;
+    width: 500px;
     height: 400px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     
 }
 .inicio {
     display: flex;
-    justify-content: space-between; 
-    align-items: flex-start; 
     width: 100%; 
     margin: 0px 0 0 0;
 }
 .forma {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
     background-color: #24243d;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
     width: 50%;
@@ -316,8 +311,8 @@ body {
 }
 
 .regist {
-    margin-top: 3.5%;
-    margin-bottom: 3.5%;
+    margin-top: 7%;
+    margin-bottom: 7%;
     
 }
 .regist2{
@@ -345,10 +340,10 @@ body {
 .forma .FormIzquierdo {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items:center;
     width: 100%;
 }
+
 .ContenedorInput {
     width: 90%;
     font-size: 1rem;
@@ -363,15 +358,17 @@ body {
     height: 2rem;
     border: 2px solid #b12bb1;
     border-radius: 20px;
-    color: white;
-    
-    
+    color: white;    
+    font-size: 18px;
 }
+
 .FormIzquierdoIniciarSesion{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     width: 100%;
+    height: 100%;
+    margin: 9% 0 0 0;
+    text-align: center;
     
 }
 .FormIzquierdoIniciarSesion input{
@@ -387,13 +384,14 @@ body {
     padding: 4px;
 }
 .forma label {
+    
     font-size: 1rem;
     font-weight: bold;
-    margin: 0 0 1% 0;
+    margin: 0 0 2% 0;
 }
 .forma button {
     width: 40%;
-    height: 1.9rem;
+    height: 2.5rem;
     font-weight: bold;
     border: 2px solid #962596;
     border-radius: 1rem;
@@ -401,21 +399,29 @@ body {
     color: white;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
-    margin-left: 30%;
-    margin-top: -3%;
 }
-.ladoDerecho {
-    width: 50%;
-    height: 100vh;
-    margin-left: 131%;
-    margin-top: -56%;
-    
+.ladoDerechoiniciarsesion {
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    margin-left: 1%;
+    margin-top: 1%;   
+}
+.MargenesInciarSes{
+    margin: 10% 0 0 9%;
+    padding: 0 2% 0 0;
+}
+
+.justificarIniciarsesion{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
 }
 .ladoDerecho3{
     width: 50%;
     height: 100vh;
     margin-left: 2.9%;
-    margin-top:-1%;
+    margin-top:1%;
 }
 /* PAGINA MAIN DE SESION INICIADA */
 
