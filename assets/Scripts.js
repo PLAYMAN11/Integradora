@@ -188,9 +188,6 @@ const logout = () => {
     document.cookie = "jwt=; expires=Thu, 01 Jan 2025 00:00:00 UTC; path=/;";
     window.location.href = "../index.html";
 }
-const logoutButton = document.querySelector("#logout");
-logoutButton.addEventListener("click", logout);
-
 //Funcion para agregar sobre mi
 function agregarSobreMi(){
     const cookieHeader = document.cookie;
@@ -275,16 +272,16 @@ function mostrarUsuarioPerfil(){
 }};
 
 //cambiar la foto de perfil
-document.getElementById('file-input').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('profile-img').src = e.target.result;
-        }
-        reader.readAsDataURL(file);
-    }
-});
+// document.getElementById('file-input').addEventListener('OnClick', function(event) {
+//     const file = event.target.files[0];
+//     if (file) {
+//         const reader = new FileReader();
+//         reader.onload = function(e) {
+//             document.getElementById('profile-img').src = e.target.result;
+//         }
+//         reader.readAsDataURL(file);
+//     }
+// });
 
 //funcion para insertar la foto de perfil
 async function insertarFotoPerfil(){
@@ -354,3 +351,94 @@ async function cambiarFotoPerfil(){
     }
 }
 
+async function SacarGastos() {
+    const cookieHeader = document.cookie;
+    const response = await fetch('http://localhost:3000/usuarios/MostrarServicios', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            cookie: cookieHeader
+        })
+    });
+    if (response.ok) {
+        const data = await response.json();
+        let total = 0;
+        for (let index = 0; index < data.length; index++) {
+            const element = data[index];
+            document.getElementById("MostrarDatos").innerHTML += `Nombre: ${element.nombre}, Precio: ${element.precio} <br>`;
+            total += element.precio;
+        }
+
+        document.getElementById("MostrarDatos").innerHTML += `<hr>  Total gastado Mensualmente: ${total}`;
+
+    }
+}
+
+//Funcion para agregar servicios
+async function AgregarServicio(){
+    const cookieHeader = document.cookie;
+    var nombre = document.getElementById("NombreServicio").value;
+    var precio = document.getElementById("CostoServicio").value;
+    if(nombre == "" || precio == ""){
+        alert("Por favor llene todos los campos");
+    }else{
+        async function postData() {
+            try {
+            const response = await fetch('http://localhost:3000/usuarios/AgregarServicio', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    cookie: cookieHeader,
+                    "Nombre": `${nombre}`,
+                    "Precio": `${precio}`
+                })
+            });
+        
+            if (!response.ok) {
+                throw new Error("Error en la respuesta del servidor: " +response.status);
+            }
+            const data = await response.text(); 
+            alert("Servicio agregado con éxito");
+            window.location.href = "Servicios.html";
+        } catch (error) {
+            console.error('Error:', error);
+            alert("Error al procesar la solicitud: " +error.message);
+        }
+    }
+    postData();
+}}
+
+async function MostrarUlt12meses(){
+    const cookieHeader = document.cookie;
+            try {
+            const response = await fetch('http://localhost:3000/usuarios/MostrarGastos12Ultimosmeses', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    cookie: cookieHeader,
+                })
+            });
+        
+            if (!response.ok) {
+                throw new Error("Error en la respuesta del servidor: " +response.status);
+            }
+            const data = await response.json();
+            const formattedData = data.map(item => ({
+                value: item.value,
+                time: item.time
+            }));
+            console.log(formattedData);
+            return formattedData;
+
+        } catch (error) {
+            console.error('Error:', error);
+            alert("Error al procesar la solicitud: " +error.message);
+        }
+    postData();
+};
