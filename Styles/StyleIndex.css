@@ -812,3 +812,21 @@ div.Perfiles{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
 }
 
+/*Estilo de la pagina de ajustarIngresos*/
+.FormIzquierdoAjustarIngresos{
+    margin: 5% 0 0 0;
+}
+
+.FormIzquierdoAjustarIngresos input{
+    background: transparent;
+    width: 90%;
+    height: 2.5rem;
+    border: 2px solid #b12bb1;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.registAjusIng{
+    margin: 2% 0 5% 0;
+}
