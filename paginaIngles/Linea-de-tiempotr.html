@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <header>
+        <title>MyNetService</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="../Styles/StyleIndex.css">
+        <script src="../assets/Scripts.js">llamarheader()</script>
+                <script src="../assets/Animaciones.js"></script>
+        <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    </header>
+    <body>
+        <div id="headerMain">
+        </div>
+        <div class="ContenedorGrafica">
+        <div 
+            class="Titulo">Your expenses over the last 12 months
+        </div>
+        <div id='TextoTabla'>
+
+        </div>
+        <div 
+            id="chartContainer" style="height: 100%; width: 90%; display: flex;">
+        </div>
+        <script>
+            async function initChart(){
+              const chartOptions = {
+            layout: {
+                textColor: 'white',
+                background: { type: 'solid', color: '#282c3c' }
+            }
+        };
+
+        const chart = LightweightCharts.createChart(document.getElementById('chartContainer'), chartOptions);
+        const lineSeries = chart.addLineSeries({ color: '#ff2bb5' });
+
+        const data = await MostrarUlt12meses()
+        if(data.length == 0){
+        document.getElementById('TextoTabla').innerHTML = "No data to display"
+            return
+        };
+
+        lineSeries.setData(data);
+        chart.timeScale().fitContent();
+    }
+     initChart();
+        </script>
+        </div>
+       
+        </body>
+        <script src="../assets/Scripts.js"> </script>
+        <script>   
+        document.addEventListener('DOMContentLoaded', function() {
+                    VerificarUsuario();
+                });
+            </script>
+</html>
