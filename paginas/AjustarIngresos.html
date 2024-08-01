@@ -12,7 +12,7 @@
         <div class = "EspacioComprasIndividuales">
             <div class = "DivisionComInd">
                 <center>
-                    <p style="font-size: 20px;">Mensual</p>
+                    <p style="font-size: 20px;">Ajusta tu ingreso mensual</p>
                     <hr style="width: 90%; background-color: #b12bb1; height: 3px; border: none;">
                     <div class="FormIzquierdoAjustarIngresos">
                         <div>
@@ -24,6 +24,8 @@
                             </div>
                             <div class="margenesiniciarsesion">
                                 <button type="button" class="btnCompInd" onclick="IngresarIngresoMensual()">Ingresar</button>
+                                <hr class = "lineadivisoramisservicios" style="width: 90%;">
+                                <div id="INGMEN"></div>
                             </div>
                         </div>  
                     </div>                      
@@ -31,7 +33,7 @@
             </div>
             <div class = "DivisionComInd2">
                 <center>
-                    <p style="font-size: 20px;">Individual</p>
+                    <p style="font-size: 20px;">Ajuste un ingreso individual</p>
                     <hr style="width: 90%; background-color: #b12bb1; height: 3px; border: none;">
                     <div class="FormIzquierdoAjustarIngresos">
                         <div>
@@ -40,6 +42,7 @@
                             </label>
                             <div 
                                 class="registAjusIng"><input type="text" placeholder="Ingrese el nombre Individual" style="text-align: center">
+                            
                             </div>
                             <label>
                                 Monto Individual
@@ -49,6 +52,7 @@
                             </div>
                             <div class="margenesiniciarsesion">
                                 <button type="button" class="btnCompInd" onclick="IngresarIngresoIndividual()">Ingresar</button>
+
                             </div>
                         </div>  
                     </div>  
