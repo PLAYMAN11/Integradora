@@ -10,7 +10,7 @@ html, body{
     justify-content: space-between;
     align-items: center;
     border-top: 5px solid #b12bb1;
-    position: fixed;
+    position: relative;
     width: 100%; 
     box-shadow: 0 0 0.2rem 0 rgb(0, 0, 0);
     align-content: center;
@@ -111,7 +111,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15% 0 0 5%;
+    padding: 11% 0 0 5%;
     
 }
 .descripcion {
@@ -259,6 +259,15 @@ body {
     text-align: center;
     font-size: 100%;
 }
+.translade{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 225px;
+    top: 28px;
+    cursor: pointer;
+
+}
 /* PAGINA INICIO DE SESION Y REGISTRO */
 .iniciodesesion{
     align-items: center;
@@ -348,7 +357,7 @@ body {
     width: 90%;
     font-size: 1rem;
     color: white;
-    margin: 0 0 5% 0;
+    margin: 0 0 4% 0;
     padding: 0 0 0 10px;
     font-family: Arial, Helvetica, sans-serif;
 }

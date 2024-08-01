@@ -87,9 +87,15 @@ function Registro(){
             if (!response.ok) {
                 throw new Error("Error en la respuesta del servidor: " +response.status);
             }
-            const data = await response.text(); 
+            if(document.location.pathname.endsWith('registrotr.html')){
+                const data = await response.text();
+                alert("Register completed successfully");
+                window.location.href = "iniciarSesiontr.html";
+            } else {
+                const data = await response.text(); 
             alert("Registro completado con éxito");
             window.location.href = "iniciarSesion.html";
+            } 
         } catch (error) {
             console.error('Error:', error);
             alert("Error al procesar la solicitud: " + error.message);
@@ -98,6 +104,7 @@ function Registro(){
     postData();
 }
 }
+
 
 //Funcion Para iniciar sesion
 async function IniciarSesion(){
@@ -127,7 +134,13 @@ async function IniciarSesion(){
             const data = await response.json(); 
             if(data.length == 0){
                 alert("Correo o contraseña incorrectos");
-            }else{
+            }
+            if(document.location.pathname.endsWith('iniciarSesiontr.html')){
+                alert("Login completed successfully");
+                const cookieValue = `jwt=${data.token}; path=${data.path}; expires=${new Date(Date.now() + data.expires)}`;
+                document.cookie = cookieValue;
+                window.location.href = "/paginaingles/Linea-de-tiempotr.html";
+            }else {
                 alert("Inicio de sesión completado con éxito");
                 const cookieValue = `jwt=${data.token}; path=${data.path}; expires=${new Date(Date.now() + data.expires)}`;
                 document.cookie = cookieValue;
