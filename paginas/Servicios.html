@@ -9,6 +9,24 @@
         <div id="headerMain"></div>
         <div class = "titulomisservicios">
             Mis servicios
+            <div class="agregarServicio">
+                <button id="AgregarServicioModal" onclick="abrirModal()">
+                    AgregarServicio
+                </button>
+                <dialog id="ModalAgregarServicio">
+                    <form>
+                        <button type="button" class="cerrarModal" onclick="cerrarModal()">X</button>
+                        <br>
+                        <label>Nombre del servicio</label>
+                        <input type="text" placeholder="Ingresa el nombre del servicio" id="NombreServicio">
+                        <br>
+                        <label>Costo del servicio</label>
+                        <input type="double" placeholder="Ingresa el costo del servicio" id="CostoServicio">
+                        <br>
+                        <button type="button" class="iniciodesesion" onclick="AgregarServicio()">Agregar Servicio</button>
+                    </form>
+                </dialog>
+            </div>
         </div>
         <div class = "misservicioscontenedor">
             <div class = "contornoiconosdemisservicios">
@@ -22,12 +40,19 @@
                     <img class = "iconosPaginaServicios" src="../Iconos-Imagenes/IconosServicios/PrimeVideo.jpg" alt="Icono PrimeVideo">
                     <img class = "iconosPaginaServicios" src="../Iconos-Imagenes/IconosServicios/Spotify.jpg" alt="Icono Spotify">
                 </div>
-            </div>
+
+                </div>
             <div class = "totaldemisservicios">
                 Total <hr class = "lineadivisoramisservicios" style="width: 90%;">
+                <div id="MostrarDatos"></div>
             </div>
         </div>
-        <script src="../assets/Scripts.js"> </script>
+        <script src="../assets/Scripts.js"></script>
+        <script>
+             document.addEventListener('DOMContentLoaded', function() {
+                    SacarGastos();
+                });
+        </script>
         <script src="../assets/Animaciones.js"></script>
     </body>
 </html>

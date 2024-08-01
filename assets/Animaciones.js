@@ -54,6 +54,19 @@ function DisplayMenu() {
     }
 }
 
+//Funcion abrir Modal
+function abrirModal() {
+    const modal = document.getElementById("ModalAgregarServicio");
+    modal.style.display = "flex";
+    modal.showModal();
+}
+
+function cerrarModal(){
+    const modal = document.getElementById("ModalAgregarServicio");
+    modal.style.display = "none";
+    modal.close();
+}
+
 
 
 
