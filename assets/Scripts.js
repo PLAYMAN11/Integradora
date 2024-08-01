@@ -177,75 +177,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         console.error('Error al cargar la vista parcial:', error);
     }
 });
-// //Funcion para pasar la pagina traducida
-// document.addEventListener('OnClick',  e()=> '{
-//     let nombre = fullPath.substring(fullPath.lastIndexOf('/') + 1);
-// 
-// });
-
 //cerrar sesion
 const logout = () => {
-    document.cookie = "jwt=; expires=Thu, 01 Jan 2025 00:00:00 UTC; path=/;";
-    window.location.href = "../index.html";
+    document.cookie = "jwt=; expires=Thu, 01 Jan 2000 00:00:00 UTC; path=/;";
+    window.location.href = "/";
 }
-//Funcion para agregar sobre mi
-function agregarSobreMi(){
-    const cookieHeader = document.cookie;
-    var sobreMi = document.getElementById("SobreMi").value;
-    if(sobreMi == ""){
-        alert("Por favor llene el campo");
-    }else{
-        async function postData() {
-            try {
-            const response = await fetch('http://localhost:3000/usuarios/insAgregarSobremi', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    "SOBREMI": sobreMi
-                })
-            });
-        
-            if (!response.ok) {
-                throw new Error("Error en la respuesta del servidor: " +response.status);
-            }
-            const data = await response.text(); 
-            alert("Sobre mi agregado con éxito");
-            window.location.href = "perfil.html";
-        } catch (error) {
-            console.error('Error:', error);
-            alert("Error al procesar la solicitud: " +error.message);
-        }
-    }
-    postData();
-    document.addEventListener("none", mostrarSobreMi());
-    document.addEventListener("none", mostrarUsuarioPerfil());
-}};
-
-
-function mostrarSobreMi(){
-    const cookieHeader = document.cookie;
-    async function postData() {
-        try {
-        const response = await fetch('http://localhost:3000/usuarios/obtSobremiPerfil', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-    
-        if (!response.ok) {
-            throw new Error("Error en la respuesta del servidor: " +response.status);
-        }
-        const data = await response.json(); 
-        document.getElementById("SobreMi").value = data[0].SOBREMI;
-        output.textContent = data;
-    } catch (error) {
-        console.error('Error:', error);
-        alert("Error al procesar la solicitud: " +error.message);
-    }
-}};
 
 //funcion para agregar usuario al perfil
 function mostrarUsuarioPerfil(){
@@ -367,11 +303,11 @@ async function SacarGastos() {
         let total = 0;
         for (let index = 0; index < data.length; index++) {
             const element = data[index];
-            document.getElementById("MostrarDatos").innerHTML += `Nombre: ${element.nombre}, Precio: ${element.precio} <br>`;
+            document.getElementById("MostrarDatos").innerHTML += `${element.nombre}, Precio: ${element.precio} <br>`;
             total += element.precio;
         }
 
-        document.getElementById("MostrarDatos").innerHTML += `<hr>  Total gastado Mensualmente: ${total}`;
+        document.getElementById("MostrarTotal").innerHTML += `Total gastado Mensualmente: ${total}`;
 
     }
 }
@@ -442,3 +378,75 @@ async function MostrarUlt12meses(){
         }
     postData();
 };
+
+async function MostrarDatosUsuario(){
+    const cookieHeader = document.cookie;
+    try {
+    const response = await fetch('http://localhost:3000/usuarios/MostrarDatosUsuario', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            cookie: cookieHeader,
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error("Error en la respuesta del servidor: " +response.status);
+    }
+    const datauser = await response.json();
+    const data = datauser[0];
+    document.getElementById("usuarioPerfil").placeholder = data.idusuario;
+    document.getElementById("NombresPerfil").placeholder = data.NombreUsuario;
+    document.getElementById("ApellidosPerfil").placeholder = data.ApellidoUsuario;
+    document.getElementById("CorreoElectronicoPerfil").placeholder = data.CorreoUsuario;
+    if (data.SOBREMI != null) {
+        document.getElementById("SobreMi").placeholder = data.SOBREMI;
+    }
+
+
+} catch (error) {
+    console.error('Error:', error);
+    alert("Error al procesar la solicitud: " +error.message);
+}
+}
+
+async function IngresarDatosUsuario(){
+    const cookieHeader = document.cookie;
+    var nombre = document.getElementById("NombresPerfil").value;
+    var apellido = document.getElementById("ApellidosPerfil").value;
+    var correo = document.getElementById("CorreoElectronicoPerfil").value;
+    var sobreMi = document.getElementById("SobreMi").value;
+    if(nombre == "" || apellido == "" || correo == ""){
+        alert("No puedes tener campos vacios ;)"); 
+    }else{
+        async function postData() {
+            try {
+            const response = await fetch('http://localhost:3000/usuarios/IngresarDatosUsuario', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    cookie: cookieHeader,
+                    "NombreUsuario": nombre,
+                    "ApellidoUsuario": apellido,
+                    "CorreoUsuario": correo,
+                    "SobreMi": sobreMi
+                })
+            });
+        
+            if (!response.ok) {
+                throw new Error("Error en la respuesta del servidor: " +response.status);
+            }
+            const data = await response.text(); 
+            alert("Datos ingresados con éxito");
+            window.location.href = "perfil.html";
+        } catch (error) {
+            console.error('Error:', error);
+            alert("Error al procesar la solicitud: " +error.message);
+        }
+    }
+    postData();
+}}

@@ -13,12 +13,8 @@
                 <p class ="tituloperfil">Perfil </p> <hr style="width: 90%;">
                 <div class = "divisoresperfil">
                     <div>
-                        <label >ID: Usuario</label>
-                        <input type="text" placeholder="ID: usuario" class ="datosperfil" id = "idusuarioPerfil">
-                    </div>
-                    <div>
                         <label >Usuario</label>
-                        <input type="text" placeholder="Usuario" class ="datosperfil " id = "usuarioPerfil">
+                        <input type="text" placeholder="Usuario" class ="datosperfil " id = "usuarioPerfil" readonly>
                     </div>
                     <div class="sizedeinput">
                         <label >Correo Electronico</label>
@@ -42,7 +38,7 @@
                     </div>
                 </div>
                 <div class = "divisiondebotonperfil">
-                    <button class="botonperfil" onclick = "agregarSobreMi()">Guardar</button>
+                    <button class="botonperfil" onclick = "IngresarDatosUsuario()">Guardar</button>
                     <button class="botonperfil" id ="logoutButton" onclick="logout()">Cerrar sesion</button>
                 </div>
             </div>
@@ -62,11 +58,12 @@
         </div>
         <script src="../assets/Scripts.js"> </script>
         <script>   
-        document.addEventListener('DOMContentLoaded', function() {
-                    VerificarUsuario();
+         document.addEventListener('DOMContentLoaded', async function() {
+                    await VerificarUsuario();
+                    await MostrarDatosUsuario();
                 });
             </script>
         <script src="../assets/Animaciones.js"></script>
-        <script src="../../MyNetService-Servidor/Routes/usuarios.js"></script>
+
     </body>
 </html>

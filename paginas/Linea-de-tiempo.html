@@ -12,10 +12,13 @@
         </div>
         <div class="ContenedorGrafica">
         <div 
-            class="Titulo">Tus Gastos en los ultimos 12 meses
+            class="Titulo">Tus Gastos los ultimos meses
+        </div>
+        <div id='TextoTabla'>
+
         </div>
         <div 
-            id="chartContainer" style="height: 100%; width: 90%;">
+            id="chartContainer" style="height: 100%; width: 90%; display: flex;">
         </div>
         <script>
             async function initChart(){
@@ -29,7 +32,11 @@
         const chart = LightweightCharts.createChart(document.getElementById('chartContainer'), chartOptions);
         const lineSeries = chart.addLineSeries({ color: '#ff2bb5' });
 
-        const data = await MostrarUlt12meses();
+        const data = await MostrarUlt12meses()
+        if(data.length == 0){
+        document.getElementById('TextoTabla').innerHTML = "No hay datos para mostrar aun."
+            return
+        };
 
         lineSeries.setData(data);
         chart.timeScale().fitContent();
@@ -37,6 +44,7 @@
      initChart();
         </script>
         </div>
+       
         </body>
         <script src="../assets/Scripts.js"> </script>
         <script>   
