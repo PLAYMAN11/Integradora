@@ -497,3 +497,88 @@ async function agregarCompra(){
     }
     postData();
 }}
+
+async function AjustarIngresos() {
+   const cookieHeader = document.cookie
+    var ingresosMen = document.getElementById("Ingreso").value;
+    if(ingresosMen == ""){
+        alert("No puedes tener campos vacios ;)");
+    } else {
+        async function postData() {
+            try {
+                const response = await fetch('http://localhost:3000/usuarios/ActualizarIngresoMensual', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        cookie: cookieHeader,
+                        "Ingreso": ingresosMen
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error("Error en la respuesta del servidor: " + response.status);
+                }
+
+                alert("Ingresos ajustados con éxito");
+                const response2 = await fetch('http://localhost:3000/usuarios/MostrarDinero', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    cookie: cookieHeader
+                })
+            });
+
+            if (response2.ok) {
+                const data = await response2.json();
+                const ingresos = data.Ingresos;
+                document.getElementById("INGMEN").innerHTML = `Sus ingresos Mensuales: ${ingresos}`;
+            }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert("Error al procesar la solicitud: " + error.message);
+            }
+        }
+        postData();
+    }
+}
+
+async function IngresarIngresoIndividual(){
+    const cookieHeader = document.cookie;
+    var NombreIng = document.getElementById("NombreIndividual").value;
+    var MontoIngreso = document.getElementById("IngresoIndividual").value;
+    if(NombreIng == "" || MontoIngreso == ""){
+        alert("No puedes tener campos vacios ;)");
+    } else {
+        async function postData() {
+            try {
+                const response = await fetch('http://localhost:3000/usuarios/IngresarIngresoIndividual', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        cookie: cookieHeader,
+                        "Nombre": NombreIng,
+                        "Monto": MontoIngreso
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error("Error en la respuesta del servidor: " + response.status);
+                }
+
+                alert("Ingreso ingresado con éxito");
+                window.location.href = "AjustarIngresos.html";
+            } catch (error) {
+                console.error('Error:', error);
+                alert("Error al procesar la solicitud: " + error.message);
+            }
+        }
+        postData();
+    }
+}
