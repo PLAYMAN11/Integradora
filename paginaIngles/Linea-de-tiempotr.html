@@ -12,7 +12,7 @@
         </div>
         <div class="ContenedorGrafica">
         <div 
-            class="Titulo">Tus Gastos los ultimos meses
+            class="Titulo">Your expenses over the last 12 months
         </div>
         <div id='TextoTabla'>
 
@@ -34,7 +34,7 @@
 
         const data = await MostrarUlt12meses()
         if(data.length == 0){
-        document.getElementById('TextoTabla').innerHTML = "No hay datos para mostrar aun."
+        document.getElementById('TextoTabla').innerHTML = "No data to display"
             return
         };
 

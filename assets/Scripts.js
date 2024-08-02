@@ -87,9 +87,15 @@ function Registro(){
             if (!response.ok) {
                 throw new Error("Error en la respuesta del servidor: " +response.status);
             }
-            const data = await response.text(); 
+            if(document.location.pathname.endsWith('registrotr.html')){
+                const data = await response.text();
+                alert("Register completed successfully");
+                window.location.href = "iniciarSesiontr.html";
+            } else {
+                const data = await response.text(); 
             alert("Registro completado con éxito");
             window.location.href = "iniciarSesion.html";
+            } 
         } catch (error) {
             console.error('Error:', error);
             alert("Error al procesar la solicitud: " + error.message);
@@ -98,6 +104,7 @@ function Registro(){
     postData();
 }
 }
+
 
 //Funcion Para iniciar sesion
 async function IniciarSesion(){
@@ -127,7 +134,13 @@ async function IniciarSesion(){
             const data = await response.json(); 
             if(data.length == 0){
                 alert("Correo o contraseña incorrectos");
-            }else{
+            }
+            if(document.location.pathname.endsWith('iniciarSesiontr.html')){
+                alert("Login completed successfully");
+                const cookieValue = `jwt=${data.token}; path=${data.path}; expires=${new Date(Date.now() + data.expires)}`;
+                document.cookie = cookieValue;
+                window.location.href = "/paginaingles/Linea-de-tiempotr.html";
+            }else {
                 alert("Inicio de sesión completado con éxito");
                 const cookieValue = `jwt=${data.token}; path=${data.path}; expires=${new Date(Date.now() + data.expires)}`;
                 document.cookie = cookieValue;
@@ -206,7 +219,6 @@ function mostrarUsuarioPerfil(){
         alert("Error al procesar la solicitud: " +error.message);
     }
 }};
-
 //cambiar la foto de perfil
 // document.getElementById('file-input').addEventListener('OnClick', function(event) {
 //     const file = event.target.files[0];
@@ -286,7 +298,6 @@ async function cambiarFotoPerfil(){
         alert("Error al procesar la solicitud: " + error.message);
     }
 }
-
 async function SacarGastos() {
     const cookieHeader = document.cookie;
     const response = await fetch('http://localhost:3000/usuarios/MostrarServicios', {
@@ -450,3 +461,202 @@ async function IngresarDatosUsuario(){
     }
     postData();
 }}
+
+async function agregarCompra(){
+    const cookieHeader = document.cookie;
+    var nombre = document.getElementById("NombreCompra").value;
+    var precio = document.getElementById("PrecioCompra").value;
+    var cantidad = document.getElementById("CantidadCompra").value;
+
+    if(nombre == "" || precio == "" || cantidad == ""){
+        alert("No puedes tener campos vacios ;)"); 
+    }else{
+        var preciototal = precio * cantidad;
+        async function postData() {
+            try {
+            const response = await fetch('http://localhost:3000/usuarios/IngresarCompra', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    cookie: cookieHeader,
+                    "NombreGasto": nombre,
+                    "PrecioGasto": preciototal,
+                    "CantidadGasto": cantidad,
+                })
+            });
+        
+            if (!response.ok) {
+                throw new Error("Error en la respuesta del servidor: " +response.status);
+            }
+            const data = await response.text(); 
+            alert("Datos ingresados con éxito");
+            window.location.href = "ComprasIndividuales.html";
+        } catch (error) {
+            console.error('Error:', error);
+            alert("Error al procesar la solicitud: " +error.message);
+        }
+    }
+    postData();
+}}
+
+async function MostrarComprasIndividuales() {
+    const cookie = document.cookie;
+    try {
+        const response = await fetch('http://localhost:3000/usuarios/MostrarComprasIndividuales', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                cookie: cookie,
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error("Error en la respuesta del servidor: " + response.status);
+        }
+        const data = await response.json();
+        let total = 0;
+        console.log(data);
+        if (data.length == 0) {
+            document.getElementById("TotalCompra").innerHTML = "No hay compras registradas";
+        } else {
+            for (let index = 1; index < data.length; index++) { // Start from index 0
+                const element = data[index];
+                const cantidadIndividual = element.PrecioGasto / element.CantidadGasto;
+                document.getElementById("TotalCompra").innerHTML += `${element.NombreGasto}, Cantidad: ${element.CantidadGasto}, Precio: ${cantidadIndividual} <br><br>`;
+                total += element.PrecioGasto; // Add to total
+            }
+            document.getElementById("MostrarTotalind").innerHTML = `Total gastado: ${total}`;
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert("Error al procesar la solicitud: " + error.message);
+    }
+}
+
+async function agregarCompra(){
+    const cookieHeader = document.cookie;
+    var nombre = document.getElementById("NombreCompra").value;
+    var precio = document.getElementById("PrecioCompra").value;
+    var cantidad = document.getElementById("CantidadCompra").value;
+
+    if(nombre == "" || precio == "" || cantidad == ""){
+        alert("No puedes tener campos vacios ;)"); 
+    }else{
+        var preciototal = precio * cantidad;
+        async function postData() {
+            try {
+            const response = await fetch('http://localhost:3000/usuarios/IngresarCompra', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    cookie: cookieHeader,
+                    "NombreGasto": nombre,
+                    "PrecioGasto": preciototal,
+                    "CantidadGasto": cantidad,
+                })
+            });
+        
+            if (!response.ok) {
+                throw new Error("Error en la respuesta del servidor: " +response.status);
+            }
+            const data = await response.text(); 
+            alert("Datos ingresados con éxito");
+            window.location.href = "ComprasIndividuales.html";
+        } catch (error) {
+            console.error('Error:', error);
+            alert("Error al procesar la solicitud: " +error.message);
+        }
+    }
+    postData();
+}}
+
+async function AjustarIngresos() {
+   const cookieHeader = document.cookie
+    var ingresosMen = document.getElementById("Ingreso").value;
+    if(ingresosMen == ""){
+        alert("No puedes tener campos vacios ;)");
+    } else {
+        async function postData() {
+            try {
+                const response = await fetch('http://localhost:3000/usuarios/ActualizarIngresoMensual', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        cookie: cookieHeader,
+                        "Ingreso": ingresosMen
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error("Error en la respuesta del servidor: " + response.status);
+                }
+
+                alert("Ingresos ajustados con éxito");
+                const response2 = await fetch('http://localhost:3000/usuarios/MostrarDinero', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    cookie: cookieHeader
+                })
+            });
+
+            if (response2.ok) {
+                const data = await response2.json();
+                const ingresos = data.Ingresos;
+                document.getElementById("INGMEN").innerHTML = `Sus ingresos Mensuales: ${ingresos}`;
+            }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert("Error al procesar la solicitud: " + error.message);
+            }
+        }
+        postData();
+    }
+}
+
+async function IngresarIngresoIndividual(){
+    const cookieHeader = document.cookie;
+    var NombreIng = document.getElementById("NombreIndividual").value;
+    var MontoIngreso = document.getElementById("IngresoIndividual").value;
+    if(NombreIng == "" || MontoIngreso == ""){
+        alert("No puedes tener campos vacios ;)");
+    } else {
+        async function postData() {
+            try {
+                const response = await fetch('http://localhost:3000/usuarios/IngresarIngresoIndividual', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        cookie: cookieHeader,
+                        "Nombre": NombreIng,
+                        "Monto": MontoIngreso
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error("Error en la respuesta del servidor: " + response.status);
+                }
+
+                alert("Ingreso ingresado con éxito");
+                window.location.href = "AjustarIngresos.html";
+            } catch (error) {
+                console.error('Error:', error);
+                alert("Error al procesar la solicitud: " + error.message);
+            }
+        }
+        postData();
+    }
+}
