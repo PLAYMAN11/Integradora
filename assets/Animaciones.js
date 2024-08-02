@@ -58,6 +58,7 @@ function DisplayMenu() {
 function abrirModal() {
     const modal = document.getElementById("ModalAgregarServicio");
     modal.style.display = "flex";
+    modal.style.transition = "2s";
     modal.showModal();
 }
 

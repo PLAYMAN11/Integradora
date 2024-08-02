@@ -12,7 +12,7 @@
         <div class = "EspacioComprasIndividuales">
             <div class = "DivisionComInd">
                 <center>
-                    <p style="font-size: 20px;">Mensual</p>
+                    <p style="font-size: 20px;">Ajusta tu ingreso mensual</p>
                     <hr style="width: 90%; background-color: #b12bb1; height: 3px; border: none;">
                     <div class="FormIzquierdoAjustarIngresos">
                         <div>
@@ -20,10 +20,12 @@
                                 Monto Mensual
                             </label>
                             <div 
-                                class="registAjusIng"><input type="text" placeholder="Ingrese el monto mensual" style="text-align: center">
+                                class="registAjusIng"><input type="number" placeholder="Ingrese el monto mensual" style="text-align: center" id="Ingreso">
                             </div>
                             <div class="margenesiniciarsesion">
-                                <button type="button" class="btnCompInd" onclick="IngresarIngresoMensual()">Ingresar</button>
+                                <div id="INGMEN"></div>
+                                <hr class = "lineadivisoramisservicios" style="width: 90%;">
+                                <button type="button" class="btnCompInd" onclick="AjustarIngresos()">Ingresar</button>
                             </div>
                         </div>  
                     </div>                      
@@ -31,7 +33,7 @@
             </div>
             <div class = "DivisionComInd2">
                 <center>
-                    <p style="font-size: 20px;">Individual</p>
+                    <p style="font-size: 20px;">Ajuste un ingreso individual</p>
                     <hr style="width: 90%; background-color: #b12bb1; height: 3px; border: none;">
                     <div class="FormIzquierdoAjustarIngresos">
                         <div>
@@ -39,16 +41,18 @@
                                 Nombre Individual
                             </label>
                             <div 
-                                class="registAjusIng"><input type="text" placeholder="Ingrese el nombre Individual" style="text-align: center">
+                                class="registAjusIng"><input type="text" placeholder="Ingrese el nombre Individual" style="text-align: center" id="NombreIndividual">
+                            
                             </div>
                             <label>
                                 Monto Individual
                             </label>
                             <div 
-                                class="registAjusIng"><input type="text" placeholder="Ingrese el monto Individual" style="text-align: center">
+                                class="registAjusIng"><input type="number" placeholder="Ingrese el monto Individual" style="text-align: center" id="IngresoIndividual">
                             </div>
                             <div class="margenesiniciarsesion">
                                 <button type="button" class="btnCompInd" onclick="IngresarIngresoIndividual()">Ingresar</button>
+
                             </div>
                         </div>  
                     </div>  
@@ -57,5 +61,10 @@
         </div>
     <script src="../assets/Animaciones.js"></script>
     <script src="../assets/Scripts.js"></script>
+    <script>   
+        document.addEventListener('DOMContentLoaded', async function() {
+                   await VerificarUsuario();
+               });
+           </script>
 </body>
 </html>

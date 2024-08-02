@@ -12,7 +12,7 @@
         <div class = "EspacioComprasIndividuales">
             <div class = "DivisionComInd">
                 <center>
-                    <p style="font-size: 20px;">Compras individuales</p>
+                    <p style="font-size: 20px;">Agregar una compra</p>
                     <hr style="width: 90%; background-color: #b12bb1; height: 3px; border: none;">
                     <div class="FormIzquierdoAjustarIngresos">
                         <div>
@@ -20,34 +20,43 @@
                                 Nombre del producto
                             </label>
                             <div 
-                                class="registAjusIng"><input type="text" placeholder="Nombre del producto" style="text-align: center">
+                                class="registAjusIng"><input type="text" placeholder="Nombre del producto" style="text-align: center" id="NombreCompra">
                             </div>
                             <label>
                                 Cantidad
                             </label>
                             <div 
-                                class="registAjusIng"><input type="number" placeholder="Ingresa la cantidad" style="text-align: center">
+                                class="registAjusIng"><input type="number" placeholder="Ingresa la cantidad" style="text-align: center" id="CantidadCompra">
                             </div>
                             <label>
                                 Precio
                             </label>
                             <div
-                                class="registAjusIng"><input type="number" placeholder="Ingresa el precio" style="text-align: center">
+                                class="registAjusIng"><input type="number" placeholder="Ingresa el precio" style="text-align: center" id="PrecioCompra">
                             </div>        
                             <div class="margenesiniciarsesion">
-                                <button type="button" class="btnCompInd" onclick="IniciarSesion()">Ingresar</button>
+                                <button type="button" class="btnCompInd" onclick="agregarCompra()">Ingresar</button>
                             </div>
                         </div>                        
                 </center>
             </div>
             <div class = "DivisionComInd2">
                 <center>
-                    <p style="font-size: 20px;">Total</p>
+                    <p style="font-size: 20px;">Tus compras este mes</p>
                     <hr style="width: 90%; background-color: #b12bb1; height: 3px; border: none;">
+                    <div id="TotalCompra"></div>
+                    <hr class = "lineadivisoramisservicios" style="width: 90%;">
+                    <div id="MostrarTotalind"></div>
                 </center>
             </div>
         </div>
     <script src="../assets/Animaciones.js"></script>
     <script src="../assets/Scripts.js"></script>
+    <script>   
+        document.addEventListener('DOMContentLoaded', async function() {
+                   await VerificarUsuario();
+                   await MostrarComprasIndividuales();
+               });
+           </script>
 </body>
 </html>
