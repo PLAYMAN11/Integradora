@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MyNetService</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../Styles/StyleIndex.css">
+</head>
+    <body background="/Iconos-Imagenes/bck3.jpg">
+        <div class="inicio">
+            <form class="forma">
+                <div class="Regresar">
+                    <h1>Register account</h1>
+                    <a href="iniciarSesiontr.html"><img src="../Iconos-Imagenes/flecha-correcta.png" alt=""> Back</a>
+                </div>
+                <div class="FormIzquierdo">
+                    <label class="FormIzquierdo">Name(s)</label>
+                    <div class="ContenedorInput"><input type="text" placeholder="Enter your name(s)" style="text-align: center" id="Nombre"></div>
+                    <label style="text-align: center">Last name(s)</label>
+                    <div class="ContenedorInput"><input type="text" placeholder="Enter your last name(s)" style="text-align: center" id="Apellido"></div>
+                    <label style="text-align: center">Password</label>
+                    <div class="ContenedorInput"><input type="password" placeholder="Enter your password" style="text-align: center" id="Contraseña"></div>
+                    <label style="text-align: center">Email</label>
+                    <div class="ContenedorInput"><input type="Email" placeholder="Enter your email" style="text-align: center" id="Correo"></div>
+                    <label style="text-align: center">Birthday</label>
+                    <div class="ContenedorInput"><input type="date" placeholder="Enter your birtday" style="text-align: center" id="FechaNac"></div>
+                    <button type="button" class="iniciodesesion" onclick="Registro()">Register now!</button>
+                </div>
+                
+                <img class="cerdo" src="/Iconos-Imagenes/Ejemploimagen.jpg">
+            </form>
+            <div class="ladoDerecho3">
+                <h1>Start keeping track of your finances</h1>
+                
+            </div>
+        </div>
+        <script src="../assets/Scripts.js"> </script>
+        <script>   
+        document.addEventListener('DOMContentLoaded', function() {
+                    VerificarGuest();
+                });
+            </script>
+    </body>
+</html>

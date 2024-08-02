@@ -1,52 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <header>
+    <head>
         <title>MyNetService</title>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="../Styles/StyleIndex.css">
-    </header>
+    </head>
+
     <body class = "BdPerfil">
+        <div id="headerMain"></div>
         <div class = Perfiles> 
             <div class = "perfil">
                 <p class ="tituloperfil">Perfil </p> <hr style="width: 90%;">
                 <div class = "divisoresperfil">
                     <div>
-                        <label >ID: Usuario</label>
-                        <input type="text" placeholder="ID: usuario" class ="datosperfil">
-                    </div>
-                    <div>
                         <label >Usuario</label>
-                        <input type="text" placeholder="Usuario" class ="datosperfil">
+                        <input type="text" placeholder="Usuario" class ="datosperfil " id = "usuarioPerfil" readonly>
                     </div>
                     <div class="sizedeinput">
                         <label >Correo Electronico</label>
-                    <input type="text" placeholder="Correo Electronico" class ="datosperfil">
+                    <input type="email" placeholder="Correo Electronico" class ="datosperfil" id="CorreoElectronicoPerfil">
                     </div>
                 </div>
                 <div class = "divisoresperfil">
                     <div class="sizedeinput">
                         <label >Nombre(s)</label>
-                        <input type="text" placeholder="Nombre(s)" class ="datosperfil">
+                        <input type="text" placeholder="Nombre(s)" class ="datosperfil" id="NombresPerfil">
                     </div>
                     <div class="sizedeinput">
                         <label >Apellido(s)</label>   
-                        <input type="text" placeholder="Apellido(s)" class ="datosperfil">
+                        <input type="text" placeholder="Apellido(s)" class ="datosperfil" id="ApellidosPerfil">
                     </div>
                 </div> 
                 <div class = "divisoresperfil">
                     <div class="sizedeinput">
-                        <label>Sobre mi</label>
-                        <textarea name="Sobre mi" class = "datosperfil2" cols="80" rows="4" placeholder="Escribe aqui..."></textarea>
+                        <label>Notas</label>
+                        <textarea name="Sobre mi" class = "datosperfil2" cols="80" rows="4" placeholder="Escribe aqui..." id = "SobreMi"></textarea>
                     </div>
                 </div>
                 <div class = "divisiondebotonperfil">
-                    <button class="botonperfil">Guardar</button>
-                    <button class="botonperfil">Cerrar sesion</button>
+                    <button class="botonperfil" onclick = "IngresarDatosUsuario()">Guardar</button>
+                    <button class="botonperfil" id ="logoutButton" onclick="logout()">Cerrar sesion</button>
                 </div>
             </div>
             <div class="fotodeperfil">   
-                <img class="Ailton" src="../Iconos-Imagenes/Yop.jfif" alt="Foto de perfil" >
+                <img id="profile-img" src="../Iconos-Imagenes/Yop.jfif" alt="Foto de Perfil" class = "Ailton">
+                <div>
+                    <input type="file" id="file-input" style="display: none;" accept="image/*" onclick="">
+                    <img id="upload-icon" src="ruta/al/icono/subir.png" alt="Subir Foto" title="Cambiar Foto de Perfil" class = "Ailton">
+                </div>
+                <div>
+                    <input type="text" oninput="mostrarUsuarioPerfil()"  class ="mostrarNombrePerfil">
+                </div>
+                <div>
+                    <input type="textbox" oninput="mostrarSobreMi()" class ="mostrarSobremiPerfil">
+                </div>
             </div>
         </div>
+        <script src="../assets/Scripts.js"> </script>
+        <script>   
+         document.addEventListener('DOMContentLoaded', async function() {
+                    await VerificarUsuario();
+                    await MostrarDatosUsuario();
+                });
+            </script>
+        <script src="../assets/Animaciones.js"></script>
+
     </body>
 </html>

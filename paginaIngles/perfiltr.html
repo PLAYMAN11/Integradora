@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MyNetService</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="../Styles/StyleIndex.css">
+    </head>
+
+    <body class = "BdPerfil" background="/Iconos-Imagenes/bck3.jpg">
+        <div id="headerMain"></div>
+        <div class = Perfiles> 
+            <div class = "perfil">
+                <p class ="tituloperfil">Profile </p> <hr style="width: 90%;">
+                <div class = "divisoresperfil">
+                    <div>
+                        <label >ID: User</label>
+                        <input type="text" placeholder="ID: user" class ="datosperfil" id = "idusuarioPerfil">
+                    </div>
+                    <div>
+                        <label >User</label>
+                        <input type="text" placeholder="User" class ="datosperfil " id = "usuarioPerfil">
+                    </div>
+                    <div class="sizedeinput">
+                        <label >Email</label>
+                    <input type="email" placeholder="Email" class ="datosperfil" id="CorreoElectronicoPerfil">
+                    </div>
+                </div>
+                <div class = "divisoresperfil">
+                    <div class="sizedeinput">
+                        <label >Name(s)</label>
+                        <input type="text" placeholder="Name(s)" class ="datosperfil" id="NombresPerfil">
+                    </div>
+                    <div class="sizedeinput">
+                        <label >Last name(s)</label>   
+                        <input type="text" placeholder="Last name(s)" class ="datosperfil" id="ApellidosPerfil">
+                    </div>
+                </div> 
+                <div class = "divisoresperfil">
+                    <div class="sizedeinput">
+                        <label>Notes</label>
+                        <textarea name="Sobre mi" class = "datosperfil2" cols="80" rows="4" placeholder="Write here..." id = "SobreMi"></textarea>
+                    </div>
+                </div>
+                <div class = "divisiondebotonperfil">
+                    <button class="botonperfil" onclick = "agregarSobreMi()">Save</button>
+                    <button class="botonperfil" id ="logoutButton" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <div class="fotodeperfil">   
+                <img class="Ailton" src="../Iconos-Imagenes/Yop.jfif" alt="Photo" >
+                <div>
+                    <input type="text" oninput="mostrarUsuarioPerfil()"  class ="mostrarNombrePerfil">
+                </div>
+                <div>
+                    <input type="textbox" oninput="mostrarSobreMi()" class ="mostrarSobremiPerfil">
+                </div>
+            </div>
+        </div>
+        <script src="../assets/Scripts.js"> </script>
+        <script>   
+        document.addEventListener('DOMContentLoaded', function() {
+                    VerificarUsuario();
+                });
+            </script>
+        <script src="../assets/Animaciones.js"></script>
+        <script src="../../MyNetService-Servidor/Routes/usuarios.js"></script>
+    </body>
+</html>
