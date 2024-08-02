@@ -65,7 +65,7 @@ function Registro(){
     var fecha = document.getElementById("FechaNac").value;
 
     if(nombre == "" || apellido == "" || correo == "" || contraseña == "" || fecha == ""){
-        alert("Por favor llene todos los campos");
+        Swal.fire("Por favor llene todos los campos");
     }else{
         async function postData() {
             try {
@@ -89,16 +89,48 @@ function Registro(){
             }
             if(document.location.pathname.endsWith('registrotr.html')){
                 const data = await response.text();
-                alert("Register completed successfully");
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 10000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                  });
+                  Toast.fire({
+                    icon: "success",
+                    title: "Register in successfully"
+                  });
                 window.location.href = "iniciarSesiontr.html";
             } else {
                 const data = await response.text(); 
-            alert("Registro completado con éxito");
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 10000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                  });
+                  Toast.fire({
+                    icon: "success",
+                    title: "Registro exitoso"
+                  });
             window.location.href = "iniciarSesion.html";
             } 
         } catch (error) {
             console.error('Error:', error);
-            alert("Error al procesar la solicitud: " + error.message);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "No se pudo iniciar sesion, por favor intentelo de nuevo",
+              });
         }
     }
     postData();
@@ -112,8 +144,8 @@ async function IniciarSesion(){
     var contraseña = document.getElementById("Contraseña").value;
 
     if(correo == "" || contraseña == ""){
-        alert("Por favor llene todos los campos");
-    }else{
+        Swal.fire("Por favor llene todos los campos");
+        }else{
         async function postData() {
             try {
             const response = await fetch('http://localhost:3000/usuarios/IniciarSesion', {
@@ -133,22 +165,35 @@ async function IniciarSesion(){
             }
             const data = await response.json(); 
             if(data.length == 0){
-                alert("Correo o contraseña incorrectos");
+                Swal.fire("Contraseña o correo invalido");
             }
             if(document.location.pathname.endsWith('iniciarSesiontr.html')){
-                alert("Login completed successfully");
+                Swal.fire({
+                    title: "Login susccessful",
+                    text: "Welcome to your account¡",
+                    icon: "success",
+                  });
                 const cookieValue = `jwt=${data.token}; path=${data.path}; expires=${new Date(Date.now() + data.expires)}`;
                 document.cookie = cookieValue;
                 window.location.href = "/paginaingles/Linea-de-tiempotr.html";
             }else {
-                alert("Inicio de sesión completado con éxito");
+                Swal.fire({
+                    title: "inicio de sesion exitoso",
+                    text: "!Bienvenido a tu cuenta¡",
+                    icon: "success",
+                  });
+            
                 const cookieValue = `jwt=${data.token}; path=${data.path}; expires=${new Date(Date.now() + data.expires)}`;
                 document.cookie = cookieValue;
                 window.location.href = "Linea-de-tiempo.html";
                 }
         } catch (error) {
             console.error('Error:', error);
-            alert("Error al procesar la solicitud: " +error.message);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "No se pudo iniciar sesion, por favor intentelo de nuevo",
+              });
         }
     }
     postData();
@@ -254,7 +299,11 @@ function mostrarUsuarioPerfil(){
         output.textContent = data;
     } catch (error) {
         console.error('Error:', error);
-        alert("Error al procesar la solicitud: " +error.message);
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "error al cargar los datos",
+          });
     }
 }};
 
@@ -289,7 +338,7 @@ async function AgregarServicio(){
     var nombre = document.getElementById("NombreServicio").value;
     var precio = document.getElementById("CostoServicio").value;
     if(nombre == "" || precio == ""){
-        alert("Por favor llene todos los campos");
+        Swal.fire("Por favor llene todos los campos");
     }else{
         async function postData() {
             try {
@@ -309,11 +358,15 @@ async function AgregarServicio(){
                 throw new Error("Error en la respuesta del servidor: " +response.status);
             }
             const data = await response.text(); 
-            alert("Servicio agregado con éxito");
+            Swal.fire("Servicio ingresado con éxito");
             window.location.href = "Servicios.html";
         } catch (error) {
             console.error('Error:', error);
-            alert("Error al procesar la solicitud: " +error.message);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "error al cargar los datos",
+              });
         }
     }
     postData();
@@ -345,7 +398,11 @@ async function MostrarUlt12meses(){
 
         } catch (error) {
             console.error('Error:', error);
-            alert("Error al procesar la solicitud: " +error.message);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "error al cargar los datos",
+              });
         }
     postData();
 };
@@ -379,7 +436,11 @@ async function MostrarDatosUsuario(){
 
 } catch (error) {
     console.error('Error:', error);
-    alert("Error al procesar la solicitud: " +error.message);
+    Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "error al cargar los datos",
+      });
 }
 }
 
@@ -390,7 +451,7 @@ async function IngresarDatosUsuario(){
     var correo = document.getElementById("CorreoElectronicoPerfil").value;
     var sobreMi = document.getElementById("SobreMi").value;
     if(nombre == "" || apellido == "" || correo == ""){
-        alert("No puedes tener campos vacios ;)"); 
+        Swal.fire("No puedes tener campos vacios");
     }else{
         async function postData() {
             try {
@@ -412,11 +473,15 @@ async function IngresarDatosUsuario(){
                 throw new Error("Error en la respuesta del servidor: " +response.status);
             }
             const data = await response.text(); 
-            alert("Datos ingresados con éxito");
+            Swal.fire("Datos ingresados con éxito");
             window.location.href = "perfil.html";
         } catch (error) {
             console.error('Error:', error);
-            alert("Error al procesar la solicitud: " +error.message);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "error al cargar los datos",
+              });
         }
     }
     postData();
@@ -429,7 +494,7 @@ async function agregarCompra(){
     var cantidad = document.getElementById("CantidadCompra").value;
 
     if(nombre == "" || precio == "" || cantidad == ""){
-        alert("No puedes tener campos vacios ;)"); 
+        Swal.fire("No puedes tener campos vacios");
     }else{
         var preciototal = precio * cantidad;
         async function postData() {
@@ -451,11 +516,15 @@ async function agregarCompra(){
                 throw new Error("Error en la respuesta del servidor: " +response.status);
             }
             const data = await response.text(); 
-            alert("Datos ingresados con éxito");
+            Swal.fire("Datos ingresados con éxito");
             window.location.href = "ComprasIndividuales.html";
         } catch (error) {
             console.error('Error:', error);
-            alert("Error al procesar la solicitud: " +error.message);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "error al cargar los datos",
+              });
         }
     }
     postData();
@@ -493,7 +562,11 @@ async function MostrarComprasIndividuales() {
         }
     } catch (error) {
         console.error('Error:', error);
-        alert("Error al procesar la solicitud: " + error.message);
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "error al cargar los datos",
+          });
     }
 }
 
@@ -504,7 +577,7 @@ async function agregarCompra(){
     var cantidad = document.getElementById("CantidadCompra").value;
 
     if(nombre == "" || precio == "" || cantidad == ""){
-        alert("No puedes tener campos vacios ;)"); 
+         Swal.fire("No puedes tener campos vacios");
     }else{
         var preciototal = precio * cantidad;
         async function postData() {
@@ -526,11 +599,15 @@ async function agregarCompra(){
                 throw new Error("Error en la respuesta del servidor: " +response.status);
             }
             const data = await response.text(); 
-            alert("Datos ingresados con éxito");
+             Swal.fire("Datos ingresados con éxito");
             window.location.href = "ComprasIndividuales.html";
         } catch (error) {
             console.error('Error:', error);
-            alert("Error al procesar la solicitud: " +error.message);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "error al cargar los datos",
+              });
         }
     }
     postData();
@@ -540,7 +617,7 @@ async function AjustarIngresos() {
    const cookieHeader = document.cookie
     var ingresosMen = document.getElementById("Ingreso").value;
     if(ingresosMen == ""){
-        alert("No puedes tener campos vacios ;)");
+         Swal.fire("No puedes tener campos vacios");
     } else {
         async function postData() {
             try {
@@ -559,7 +636,7 @@ async function AjustarIngresos() {
                     throw new Error("Error en la respuesta del servidor: " + response.status);
                 }
 
-                alert("Ingresos ajustados con éxito");
+                 Swal.fire("Datos ingresados con éxito");
                 const response2 = await fetch('http://localhost:3000/usuarios/MostrarDinero', {
                 method: 'POST',
                 headers: {
@@ -578,7 +655,11 @@ async function AjustarIngresos() {
                 
             } catch (error) {
                 console.error('Error:', error);
-                alert("Error al procesar la solicitud: " + error.message);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "error al cargar los datos",
+                  });
             }
         }
         postData();
@@ -590,7 +671,7 @@ async function IngresarIngresoIndividual(){
     var NombreIng = document.getElementById("NombreIndividual").value;
     var MontoIngreso = document.getElementById("IngresoIndividual").value;
     if(NombreIng == "" || MontoIngreso == ""){
-        alert("No puedes tener campos vacios ;)");
+         Swal.fire("No puedes tener campos vacios");
     } else {
         async function postData() {
             try {
@@ -610,11 +691,15 @@ async function IngresarIngresoIndividual(){
                     throw new Error("Error en la respuesta del servidor: " + response.status);
                 }
 
-                alert("Ingreso ingresado con éxito");
+                 Swal.fire("Datos ingresado con éxito");
                 window.location.href = "AjustarIngresos.html";
             } catch (error) {
                 console.error('Error:', error);
-                alert("Error al procesar la solicitud: " + error.message);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "error al cargar los datos",
+                  });
             }
         }
         postData();
