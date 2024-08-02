@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         document.getElementById('headerMain').innerHTML = html;
         const divs = document.querySelectorAll('div.navs a');
         let index = 0;
-        divs.forEach((a) => {
+        divs.forEach((a) => { 
             switch (index) {
                 case 0:
                     a.href = "Linea-de-tiempo.html";
@@ -190,6 +190,44 @@ document.addEventListener('DOMContentLoaded', async function() {
         console.error('Error al cargar la vista parcial:', error);
     }
 });
+
+
+// traduccion del header
+async function traducirheader(){
+    try {
+        const response = await fetch('http://localhost:3000/headermaintr');
+        const html = await response.text();
+        document.getElementById('headerMaintr').innerHTML = html;
+        const divs = document.querySelectorAll('div.navs a');
+        let index = 0;
+        divs.forEach((a) => { 
+            switch (index) {
+                case 0:
+                    a.href = "Linea-de-tiempotr.html";
+                    break;
+                case 1:
+                    a.href = "Serviciostr.html";
+                    break;
+                case 2:
+                    a.href = "Tudinerotr.html";
+                    break;
+                case 3:
+                    a.href = "AjustarIngresostr.html";
+                    break;
+                case 4:
+                    a.href = "ComprasIndividualestr.html";
+                    break;  
+                case 5:
+                    a.href = "perfiltr.html"    
+                    break;
+            }
+            index++;
+        });
+    } catch (error) {
+        console.error('Error al cargar la vista parcial:', error);
+    }
+}
+
 //cerrar sesion
 const logout = () => {
     document.cookie = "jwt=; expires=Thu, 01 Jan 2000 00:00:00 UTC; path=/;";

@@ -7,7 +7,7 @@
     </head>
 
     <body class = "BdPerfil">
-        <div id="headerMain"></div>
+        <div id="headerMaintr"></div>
         <div class = Perfiles> 
             <div class = "perfil">
                 <p class ="tituloperfil">Profile </p> <hr style="width: 90%;">
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="fotodeperfil">   
-                <img class="Ailton" src="../Iconos-Imagenes/Yop.jfif" alt="Photo" >
+                <img class="Ailton" src="/Iconos-Imagenes/usuario2.png" alt="Photo" >
                 <div>
                     <input type="text" oninput="mostrarUsuarioPerfil()"  class ="mostrarNombrePerfil">
                 </div>
@@ -58,8 +58,9 @@
         </div>
         <script src="../assets/Scripts.js"> </script>
         <script>   
-        document.addEventListener('DOMContentLoaded', function() {
-                    VerificarUsuario();
+        document.addEventListener('DOMContentLoaded', async function() {
+                    await traducirheader()
+                    await VerificarUsuario();
                 });
             </script>
         <script src="../assets/Animaciones.js"></script>

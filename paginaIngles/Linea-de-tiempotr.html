@@ -8,11 +8,11 @@
         <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
     </header>
     <body>
-        <div id="headerMain">
+        <div id="headerMaintr">
         </div>
         <div class="ContenedorGrafica">
         <div 
-            class="Titulo">Your expenses over the last 12 months
+            class="Titulo">Your expenses in the last months
         </div>
         <div id='TextoTabla'>
 
@@ -34,7 +34,7 @@
 
         const data = await MostrarUlt12meses()
         if(data.length == 0){
-        document.getElementById('TextoTabla').innerHTML = "No data to display"
+        document.getElementById('TextoTabla').innerHTML = "Don't have enough data to show the graph"
             return
         };
 
@@ -49,7 +49,8 @@
         <script src="../assets/Scripts.js"> </script>
         <script>   
         document.addEventListener('DOMContentLoaded', function() {
-                    VerificarUsuario();
+                traducirheader()
+                 VerificarUsuario();
                 });
             </script>
 </html>

@@ -87,6 +87,10 @@ button .linea{
     opacity: '1';
     
 }
+#Foto{
+    width: 100%;
+    height: 50%;
+}
 header nav a{
     text-decoration: none;
     color: white;

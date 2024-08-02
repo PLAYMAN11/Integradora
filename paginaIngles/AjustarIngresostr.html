@@ -5,14 +5,14 @@
     <link rel="stylesheet" href="../Styles/StyleIndex.css">
 </head>
 <body>
-    <div id="headerMain"></div>
+    <div id="headerMaintr"></div>
         <div class = "encabezadoComInd">
-            Adjust Income
+            Adjust income
         </div>
         <div class = "EspacioComprasIndividuales">
             <div class = "DivisionComInd">
                 <center>
-                    <p style="font-size: 20px;">Monthly</p>
+                    <p style="font-size: 20px;">Mensual</p>
                     <hr style="width: 90%; background-color: #b12bb1; height: 3px; border: none;">
                     <div class="FormIzquierdoAjustarIngresos">
                         <div>
@@ -39,13 +39,13 @@
                                 Individual name
                             </label>
                             <div 
-                                class="registAjusIng"><input type="text" placeholder="Ingrese el nombre Individual" style="text-align: center">
+                                class="registAjusIng"><input type="text" placeholder="Enter Individual name" style="text-align: center">
                             </div>
                             <label>
-                                Individual monthly
+                                Individual amount
                             </label>
                             <div 
-                                class="registAjusIng"><input type="text" placeholder="Ingrese el monto Individual" style="text-align: center">
+                                class="registAjusIng"><input type="text" placeholder="Enter individual amount" style="text-align: center">
                             </div>
                             <div class="margenesiniciarsesion">
                                 <button type="button" class="btnCompInd" onclick="IngresarIngresoIndividual()">Get into</button>
@@ -55,6 +55,11 @@
                 </center>
             </div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                traducirheader()
+               });
+       </script>
     <script src="../assets/Animaciones.js"></script>
     <script src="../assets/Scripts.js"></script>
 </body>

@@ -6,13 +6,31 @@
         <link rel="stylesheet" href="../Styles/StyleIndex.css">
     </header>
     <body>
-        <div id="headerMain"></div>
+        <div id="headerMaintr"></div>
         <div class = "titulomisservicios">
             My services
+            <div class="agregarServicio">
+                <button id="AgregarServicioModal" onclick="abrirModal()">
+                    Add services
+                </button>
+                <dialog id="ModalAgregarServicio">
+                    <form>
+                        <button type="button" class="cerrarModal" onclick="cerrarModal()">X</button>
+                        <br>
+                        <label>Services names</label>
+                        <input type="text" placeholder="Enter name services" id="NombreServicio">
+                        <br>
+                        <label>Cost of service</label>
+                        <input type="double" placeholder="Enter cost of service" id="CostoServicio">
+                        <br>
+                        <button type="button" class="iniciodesesion" onclick="AgregarServicio()">Add services</button>
+                    </form>
+                </dialog>
+            </div>
         </div>
         <div class = "misservicioscontenedor">
             <div class = "contornoiconosdemisservicios">
-                Services Available <hr class = "lineadivisoramisservicios" style="width: 90%;">
+                Available services <hr class = "lineadivisoramisservicios" style="width: 90%;">
                 <div class = "iconosdeServicios">
                     <img class = "iconosPaginaServicios" src="../Iconos-Imagenes/IconosServicios/Netflix.jpg" alt="Icono Netflix">
                     <img class = "iconosPaginaServicios" src="../Iconos-Imagenes/IconosServicios/DisneyPlus.jpg" alt="Icono DisneyPlus">
@@ -22,10 +40,22 @@
                     <img class = "iconosPaginaServicios" src="../Iconos-Imagenes/IconosServicios/PrimeVideo.jpg" alt="Icono PrimeVideo">
                     <img class = "iconosPaginaServicios" src="../Iconos-Imagenes/IconosServicios/Spotify.jpg" alt="Icono Spotify">
                 </div>
-            </div>
+
+                </div>
             <div class = "totaldemisservicios">
-                Total <hr class = "lineadivisoramisservicios" style="width: 90%;">
+                Your services <hr class = "lineadivisoramisservicios" style="width: 90%;">
+                <div id="MostrarDatos"></div>
+                <hr class = "lineadivisoramisservicios" style="width: 90%;">
+                <div id="MostrarTotal"></div>
             </div>
         </div>
+        <script src="../assets/Scripts.js"></script>
+        <script>
+             document.addEventListener('DOMContentLoaded', function() {
+                traducirheader()
+                SacarGastos();
+                });
+        </script>
+        <script src="../assets/Animaciones.js"></script>
     </body>
 </html>

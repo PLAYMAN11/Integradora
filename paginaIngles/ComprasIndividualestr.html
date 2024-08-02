@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<head>
-    <title>MyNetService</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../Styles/StyleIndex.css">
+<html>
+    <header>
+        <title>MyNetService</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="../Styles/StyleIndex.css">
+    </header>
 </head>
 <body>
-    <div id="headerMain"></div>
+    <div id="headerMaintr"></div>
         <div class = "encabezadoComInd">
             Individual purchases
         </div>
         <div class = "EspacioComprasIndividuales">
             <div class = "DivisionComInd">
                 <center>
-                    <p style="font-size: 20px;">Individual purchases</p>
+                    <p style="font-size: 20px;">Compras individuales</p>
                     <hr style="width: 90%; background-color: #b12bb1; height: 3px; border: none;">
                     <div class="FormIzquierdoAjustarIngresos">
                         <div>
@@ -20,7 +21,7 @@
                                 Name of product
                             </label>
                             <div 
-                                class="registAjusIng"><input type="text" placeholder="Enter name of product" style="text-align: center">
+                                class="registAjusIng"><input type="text" placeholder="Name of product" style="text-align: center">
                             </div>
                             <label>
                                 Amount
@@ -47,6 +48,11 @@
                 </center>
             </div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                traducirheader()
+               });
+       </script>
     <script src="../assets/Animaciones.js"></script>
     <script src="../assets/Scripts.js"></script>
 </body>
