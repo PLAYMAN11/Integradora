@@ -11,11 +11,11 @@
             Mis servicios
             <div class="agregarServicio">
                 <button id="AgregarServicioModal" onclick="abrirModal()">
-                    AgregarServicio
+                    Agregar Servicio
                 </button>
                 <dialog id="ModalAgregarServicio">
-                    <form>
-                        <button type="button" class="cerrarModal" onclick="cerrarModal()">X</button>
+                    <form class = "AjusteFormServ">
+                        <button type="button" class="cerrarModal" onclick="cerrarModal()">X</button >
                         <br>
                         <label>Nombre del servicio</label>
                         <input type="text" placeholder="Ingresa el nombre del servicio" id="NombreServicio">
@@ -23,7 +23,7 @@
                         <label>Costo del servicio</label>
                         <input type="double" placeholder="Ingresa el costo del servicio" id="CostoServicio">
                         <br>
-                        <button type="button" class="iniciodesesion" onclick="AgregarServicio()">Agregar Servicio</button>
+                        <button type="button" class="iniciodesesionSer" onclick="AgregarServicio()">Agregar Servicio</button>
                     </form>
                 </dialog>
             </div>
