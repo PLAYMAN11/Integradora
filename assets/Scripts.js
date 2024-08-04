@@ -206,6 +206,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         const response = await fetch('http://localhost:3000/headermain');
         const html = await response.text();
         document.getElementById('headerMain').innerHTML = html;
+
+
         const divs = document.querySelectorAll('div.navs a');
         let index = 0;
         divs.forEach((a) => { 
@@ -231,6 +233,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
             index++;
         });
+        // Asignar enlace a la imagen con id 'logo'
+    // Asignar enlace a la imagen con id 'logo'
+const logoImg = document.getElementById('logo');
+    logoImg.src = '../Iconos-Imagenes/service.png'; 
     } catch (error) {
         console.error('Error al cargar la vista parcial:', error);
     }
@@ -450,12 +456,12 @@ async function IngresarDatosUsuario(){
     var apellido = document.getElementById("ApellidosPerfil").value;
     var correo = document.getElementById("CorreoElectronicoPerfil").value;
     var sobreMi = document.getElementById("SobreMi").value;
-    if(nombre == "" || apellido == "" || correo == ""){
+    if(nombre == "" && apellido == "" && correo && "" && sobreMi == ""){
         Swal.fire("No puedes tener campos vacios");
     }else{
         async function postData() {
             try {
-            const response = await fetch('http://localhost:3000/usuarios/IngresarDatosUsuario', {
+            const response = await fetch('http://localhost:3000/usuarios/ActualizarDatos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
