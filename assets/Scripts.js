@@ -1,7 +1,7 @@
 //verificar si el usuario esta iniciado sesion
  async function VerificarUsuario() {
     const cookieHeader = document.cookie;
-    const response = await fetch('http://localhost:3000/usuarios/rqCookieUsuario', {
+    const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/rqCookieUsuario', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -18,7 +18,7 @@
 //Verificar si el usuario es guest
 async function VerificarGuest() {
     const cookieHeader = document.cookie;
-    const response = await fetch('http://localhost:3000/usuarios/rqCookieGuest', {
+    const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/rqCookieGuest', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ async function VerificarGuest() {
 //Funcion para mostrar los datos monetarios del usuario
 async function mostrardinero(){
     const cookieHeader = document.cookie;
-    const response = await fetch('http://localhost:3000/usuarios/MostrarDinero', {
+    const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/MostrarDinero', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ function Registro(){
     }else{
         async function postData() {
             try {
-            const response = await fetch('http://localhost:3000/usuarios/Registro', {
+            const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/Registro', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -148,7 +148,7 @@ async function IniciarSesion(){
         }else{
         async function postData() {
             try {
-            const response = await fetch('http://localhost:3000/usuarios/IniciarSesion', {
+            const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/IniciarSesion', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -203,7 +203,7 @@ async function IniciarSesion(){
 //Funcion para mandar a llamar el headerMain
 document.addEventListener('DOMContentLoaded', async function() {
     try {
-        const response = await fetch('http://localhost:3000/headermain');
+        const response = await fetch('https://mynetservice-servidor.onrender.com/headermain');
         const html = await response.text();
         document.getElementById('headerMain').innerHTML = html;
 
@@ -246,7 +246,7 @@ const logoImg = document.getElementById('logo');
 // traduccion del header
 async function traducirheader(){
     try {
-        const response = await fetch('http://localhost:3000/headermaintr');
+        const response = await fetch('https://mynetservice-servidor.onrender.com/headermaintr');
         const html = await response.text();
         document.getElementById('headerMaintr').innerHTML = html;
         const divs = document.querySelectorAll('div.navs a');
@@ -290,7 +290,7 @@ function mostrarUsuarioPerfil(){
     const cookieHeader = document.cookie;
     async function postData() {
         try {
-        const response = await fetch('http://localhost:3000/usuarios/nombreUsuarioPerfil', {
+        const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/nombreUsuarioPerfil', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -315,7 +315,7 @@ function mostrarUsuarioPerfil(){
 
 async function SacarGastos() {
     const cookieHeader = document.cookie;
-    const response = await fetch('http://localhost:3000/usuarios/MostrarServicios', {
+    const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/MostrarServicios', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -348,7 +348,7 @@ async function AgregarServicio(){
     }else{
         async function postData() {
             try {
-            const response = await fetch('http://localhost:3000/usuarios/AgregarServicio', {
+            const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/AgregarServicio', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -381,7 +381,7 @@ async function AgregarServicio(){
 async function MostrarUlt12meses(){
     const cookieHeader = document.cookie;
             try {
-            const response = await fetch('http://localhost:3000/usuarios/MostrarGastos12Ultimosmeses', {
+            const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/MostrarGastos12Ultimosmeses', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -416,7 +416,7 @@ async function MostrarUlt12meses(){
 async function MostrarDatosUsuario(){
     const cookieHeader = document.cookie;
     try {
-    const response = await fetch('http://localhost:3000/usuarios/MostrarDatosUsuario', {
+    const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/MostrarDatosUsuario', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -461,7 +461,7 @@ async function IngresarDatosUsuario(){
     }else{
         async function postData() {
             try {
-            const response = await fetch('http://localhost:3000/usuarios/ActualizarDatos', {
+            const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/ActualizarDatos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -505,7 +505,7 @@ async function agregarCompra(){
         var preciototal = precio * cantidad;
         async function postData() {
             try {
-            const response = await fetch('http://localhost:3000/usuarios/IngresarCompra', {
+            const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/IngresarCompra', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -539,7 +539,7 @@ async function agregarCompra(){
 async function MostrarComprasIndividuales() {
     const cookie = document.cookie;
     try {
-        const response = await fetch('http://localhost:3000/usuarios/MostrarComprasIndividuales', {
+        const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/MostrarComprasIndividuales', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -588,7 +588,7 @@ async function agregarCompra(){
         var preciototal = precio * cantidad;
         async function postData() {
             try {
-            const response = await fetch('http://localhost:3000/usuarios/IngresarCompra', {
+            const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/IngresarCompra', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -627,7 +627,7 @@ async function AjustarIngresos() {
     } else {
         async function postData() {
             try {
-                const response = await fetch('http://localhost:3000/usuarios/ActualizarIngresoMensual', {
+                const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/ActualizarIngresoMensual', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -643,7 +643,7 @@ async function AjustarIngresos() {
                 }
 
                  Swal.fire("Datos ingresados con éxito");
-                const response2 = await fetch('http://localhost:3000/usuarios/MostrarDinero', {
+                const response2 = await fetch('https://mynetservice-servidor.onrender.com/usuarios/MostrarDinero', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -681,7 +681,7 @@ async function IngresarIngresoIndividual(){
     } else {
         async function postData() {
             try {
-                const response = await fetch('http://localhost:3000/usuarios/IngresarIngresoIndividual', {
+                const response = await fetch('https://mynetservice-servidor.onrender.com/usuarios/IngresarIngresoIndividual', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
